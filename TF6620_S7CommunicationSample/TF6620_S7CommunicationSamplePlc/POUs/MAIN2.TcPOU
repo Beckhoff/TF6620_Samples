@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="MAIN2" Id="{52a4234c-2a6a-4d4e-a07f-e52b5d3743fc}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN2
+VAR
+	bInitDone:	BOOL:=FALSE;
+	
+	fbConnection: FB_S7CommConnection(16#01010050);
+	
+	fbRequestRead   : FB_S7CommSingleRequest;
+	fbRequestWrite  : FB_S7CommSingleRequest;
+	fbRequestCyclic : FB_S7CommCyclicRequest;
+	
+	data_byte			: BYTE;
+	data_dword			: DWORD;
+	data_byte_cyclic	: BYTE;
+	data_dword_cyclic	: DWORD;
+	data_int_cyclic		: INT;
+	
+	data_counter: WORD;
+	data_el1008: BYTE;
+	data_el2008: BYTE;
+	
+	ipaddr:		IPADDR;
+	hr:			HRESULT;
+	bRead: BOOL := FALSE;
+	bWrite: BOOL := FALSE;
+	bReset:	BOOL := FALSE;
+	bConnect:	BOOL := FALSE;
+	connectionError:	STRING;	
+	requestError:	STRING;
+
+	a : S7COMM_CONNECT_STATE;
+	nState:	UINT := 0;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF NOT bInitDone THEN
+
+	// Read
+	fbRequestRead.AddReadVar(ADR(data_byte),  SIZEOF(data_byte),  0 * 8, S7COMM_DATAAREA_DATA_BLOCKS, 1);
+	fbRequestRead.AddReadVar(ADR(data_dword), SIZEOF(data_dword), 2 * 8, S7COMM_DATAAREA_DATA_BLOCKS, 1);
+	
+	// write
+	// fbRequestWrite.AddWriteVar(ADR(data_el2008), SIZEOF(data_el2008), 38 * 8, S7COMM_DATAAREA_OUTPUT, 0);
+	
+	// read cyclic
+	fbRequestCyclic.AddReadVar(ADR(data_byte_cyclic),  SIZEOF(data_byte_cyclic),  0 * 8, S7COMM_DATAAREA_DATA_BLOCKS, 1);
+	fbRequestCyclic.AddReadVar(ADR(data_dword_cyclic), SIZEOF(data_dword_cyclic), 2 * 8, S7COMM_DATAAREA_DATA_BLOCKS, 1);
+	fbRequestCyclic.AddReadVar(ADR(data_int_cyclic), SIZEOF(data_int_cyclic), 14 * 8, S7COMM_DATAAREA_DATA_BLOCKS, 1);
+	
+		// add to connection
+	fbConnection.AddRequest(fbRequestRead);	
+	fbConnection.AddRequest(fbRequestWrite);	
+	fbConnection.AddRequest(fbRequestCyclic);
+	
+	fbConnection.bExecute := FALSE;
+	fbRequestWrite.bExecute := FALSE;
+	fbRequestRead.bExecute := FALSE;
+	fbRequestCyclic.bExecute := FALSE;
+	
+	bInitDone := TRUE;
+	nState := 1;
+END_IF
+
+
+CASE nState OF
+	// IDLE
+	0:;
+	
+	// CONNECT
+	1:
+	IF bConnect THEN
+		fbConnection.sIpAddr := '10.3.32.101';
+		fbConnection.eCpuType := S7COMM_CPUTYPE_S71500;
+		fbConnection.nRack := 0;
+		fbConnection.nSlot := 0;
+		
+		fbConnection.bExecute := TRUE;
+		bConnect := FALSE;
+		nState := 10;
+	END_IF
+	
+	// WAIT FOR CONNECT
+	10:
+	IF NOT fbConnection.bBusy THEN
+		IF fbConnection.bError THEN
+			connectionError := fbConnection.sErrorTxt;
+			nState := 1000;
+		ELSE
+			fbRequestCyclic.nCycleTimeMs := 1000;
+			fbRequestCyclic.bExecute := TRUE;
+			nState := 20;
+		END_IF
+	END_IF
+	
+	// RUNNING
+	20:
+	IF bRead THEN
+		bRead := FALSE;
+		fbRequestRead.bExecute := TRUE;
+		nState := 30;
+	END_IF
+	
+	IF bWrite THEN
+		bWrite := FALSE;
+		fbRequestWrite.bExecute := TRUE;
+		nState := 40;
+	END_IF
+	
+	IF fbRequestCyclic.bError THEN
+		requestError := fbRequestCyclic.sErrorTxt;
+		nState := 1000;
+	END_IF
+	
+	30:
+	IF NOT fbRequestRead.bBusy THEN
+		IF fbRequestRead.bError THEN
+			requestError := fbRequestRead.sErrorTxt;
+			nState := 1000;
+		ELSE
+			fbRequestRead.bExecute := FALSE;
+			nState := 20;
+		END_IF
+	END_IF
+	
+	40:
+	IF NOT fbRequestWrite.bBusy THEN
+		IF fbRequestWrite.bError THEN
+			requestError := fbRequestWrite.sErrorTxt;
+			nState := 1000;
+		ELSE
+			fbRequestWrite.bExecute := FALSE;
+			nState := 20;
+		END_IF
+	END_IF
+	
+	// ERROR
+	1000:
+	IF bReset THEN
+		nState := 2000;
+	END_IF
+	
+	// RESET
+	2000:
+		fbConnection.bExecute := FALSE;
+		fbRequestWrite.bExecute := FALSE;
+		fbRequestRead.bExecute := FALSE;
+		fbRequestCyclic.bExecute := FALSE;
+		connectionError := '';
+		requestError := '';
+		nState := 1;
+END_CASE
+
+// fb calls
+fbConnection();
+fbRequestRead();
+fbRequestWrite();
+fbRequestCyclic();
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN2">
+      <LineId Id="64" Count="9" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="197" Count="0" />
+      <LineId Id="195" Count="0" />
+      <LineId Id="200" Count="0" />
+      <LineId Id="196" Count="0" />
+      <LineId Id="78" Count="20" />
+      <LineId Id="100" Count="3" />
+      <LineId Id="110" Count="81" />
+      <LineId Id="5" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+  <POU Name="MAIN" Id="{b1e5abb7-541f-47a1-be0f-3c03fc6aac30}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bStartReadRequest 	: BOOL;	
+	bStartWriteRequest	: BOOL;
+	
+	stS7Info			: ST_S7_Info;
+	stS7RequestHandling	: ST_S7_RequestHandling;
+
+	(* Read variables *)
+	bReadRequestDone	: BOOL;
+	stS7Incoming		: ST_S7_Incoming;
+	stS7IncomingCyclic	: ST_S7_Incoming_Cyclic;
+	
+	(* Write variables *)
+	bWriteEnable AT%Q*	: BOOL;
+	bWriteRequestDone	: BOOL;
+	i1write AT%Q*		: INT := 42;
+	
+	(* State machine variables *)
+	nState				: UINT;
+	nStateWrite			: UINT;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nState OF 
+	0: 
+		IF bStartReadRequest THEN
+			bStartReadRequest := FALSE;
+			bReadRequestDone := FALSE;
+			nState := nState + 1;
+		END_IF
+
+	1:
+		stS7RequestHandling.bySendRequest := stS7RequestHandling.byReceiveCounter + 1;
+		nState := nState + 1;
+		
+	2: 
+		IF stS7RequestHandling.byReceiveCounter = stS7RequestHandling.bySendRequest THEN
+			nState := nState + 1;
+		END_IF	
+		
+	3: 
+		bReadRequestDone := TRUE;
+		nState := 0;
+	
+END_CASE
+
+CASE nStateWrite OF
+	0:
+		IF bStartWriteRequest THEN
+			bStartWriteRequest := FALSE;
+			bWriteEnable := TRUE;
+			nStateWrite := nStateWrite + 1;
+		END_IF
+
+	1:
+		stS7RequestHandling.bySendRequest := stS7RequestHandling.byReceiveCounter + 1;
+		nStateWrite := nStateWrite + 1;
+		
+	2: 
+		IF stS7RequestHandling.byReceiveCounter = stS7RequestHandling.bySendRequest THEN
+			bWriteEnable := FALSE;
+			nStateWrite := nStateWrite + 1;
+		END_IF	
+	
+	3: 
+		bWriteRequestDone := TRUE;
+		nStateWrite := 0;
+		
+END_CASE
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="32" Count="1" />
+      <LineId Id="35" Count="0" />
+      <LineId Id="42" Count="0" />
+      <LineId Id="55" Count="0" />
+      <LineId Id="37" Count="0" />
+      <LineId Id="36" Count="0" />
+      <LineId Id="39" Count="0" />
+      <LineId Id="38" Count="0" />
+      <LineId Id="40" Count="0" />
+      <LineId Id="43" Count="2" />
+      <LineId Id="48" Count="1" />
+      <LineId Id="46" Count="0" />
+      <LineId Id="50" Count="2" />
+      <LineId Id="56" Count="0" />
+      <LineId Id="54" Count="0" />
+      <LineId Id="34" Count="0" />
+      <LineId Id="71" Count="2" />
+      <LineId Id="82" Count="0" />
+      <LineId Id="113" Count="0" />
+      <LineId Id="117" Count="0" />
+      <LineId Id="87" Count="0" />
+      <LineId Id="84" Count="1" />
+      <LineId Id="88" Count="5" />
+      <LineId Id="115" Count="0" />
+      <LineId Id="94" Count="0" />
+      <LineId Id="86" Count="0" />
+      <LineId Id="76" Count="0" />
+      <LineId Id="101" Count="1" />
+      <LineId Id="100" Count="0" />
+      <LineId Id="99" Count="0" />
+      <LineId Id="74" Count="0" />
+      <LineId Id="66" Count="0" />
+      <LineId Id="21" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>
