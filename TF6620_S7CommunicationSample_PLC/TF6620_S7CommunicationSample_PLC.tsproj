@@ -1,0 +1,1157 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4025.3">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{03010035-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoEthProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>CheckFrame</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nVLanTag</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nTimeStamp</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>LinkStatusChanged</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>bLinkError</Name>
+					<Type GUID="{9060AE9D-214D-4685-A4C0-CD1082626764}">BOOL32</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}" TcBaseType="true">ETHERNET_ADDRESS</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>b</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>6</Elements>
+				</ArrayInfo>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{F45D8924-F151-4141-9296-7C8BB697BD07}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010096-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoArpPingRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ArpReply</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>macAddr</Name>
+					<Type GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}">ETHERNET_ADDRESS</Type>
+					<BitSize>48</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>PingReply</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{0301009E-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoArpPing</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>PingRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" Optional="0">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}" Optional="0">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ArpRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>macAddr</Name>
+					<Type GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}" PointerTo="1" Optional="0">ETHERNET_ADDRESS</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>RegisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010096-0000-0000-E000-000000000064}">ITcIoArpPingRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>UnregisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010096-0000-0000-E000-000000000064}">ITcIoArpPingRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{0301009D-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoIpStackControl</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>DeleteArpCache</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetIpData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pIpAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pIpSubnetMask</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pIpGateway</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010095-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoUdpProtocolRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ReceiveData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpDestPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpSrcPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010097-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoUdpProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>SendData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipDestAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpDestPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpSrcPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>bCalcUdpCheckSum</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000030}" Optional="0">BOOL</Type>
+					<BitSize>8</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>RegisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>udpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010095-0000-0000-E000-000000000064}">ITcIoUdpProtocolRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>UnregisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>udpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010099-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoTcpProtocolRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ReceiveData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ReceiveEvent</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpEvent</Name>
+					<Type GUID="{7CECC506-F55F-4594-B611-972D650865D2}">TCPIP_EVENT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010098-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoTcpProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>AllocSocket</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010099-0000-0000-E000-000000000064}">ITcIoTcpProtocolRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>FreeSocket</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Connect</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>ipRemoteAddress</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>IsConnected</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Close</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Listen</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Accept</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SendData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nSendData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetRemoteIpAddr</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>remoteIpAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetFreeSendDataSize</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00000000003E}" TcBaseType="true" HideSubItems="true">IPADDR</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d</Printf>
+				<Parameter>[3]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[0]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>nSendCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSendFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRecvCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRecvFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{38621CD5-4239-4327-97F7-35F1414B7265}">IpStackDiagnosis</Name>
+			<BitSize>768</BitSize>
+			<SubItem>
+				<Name>ip</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>arpRequest</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>arpReply</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pingRequest</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pingReply</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nLinkStatusChangedCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nAllocFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>672</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nArpTimeoutFrames</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDroppedFrames</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>736</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000000000000000000000000000000000000000000000008000008000000080800080000000800080008080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00ffffffffffffffffff788833338887ffff78883bb38887ffffffff3bb3ffffffffffff8778fffffffffffffffffffffffffffffffff999ffff78f78fffffffffff78f78ffff999ffff78f7888fffffffff78f78f78f999ffff78f78f78ffffffff78f7888ff999ffffffffffffffffff</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{946498C8-DB84-43E6-9CBE-1ED387D9291C}" TargetNetId="5.25.123.60.1.1" Target64Bit="true" ShowHideConfigurations="#x3c7">
+		<System>
+			<Tasks>
+				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+					<Name>PlcTask</Name>
+				</Task>
+			</Tasks>
+		</System>
+		<Plc>
+			<Project GUID="{A8B05F93-9CDD-4E55-BE28-81F6A387D8B7}" Name="TF6620_S7CommunicationSample_PLC" PrjFilePath="TF6620_S7CommunicationSample_PLC\TF6620_S7CommunicationSample_PLC.plcproj" TmcFilePath="TF6620_S7CommunicationSample_PLC\TF6620_S7CommunicationSample_PLC.tmc" ReloadTmc="true" AmsPort="851" TargetArchiveSettings="#x0002" FileArchiveSettings="#x000c" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TF6620_S7CommunicationSample_PLC\TF6620_S7CommunicationSample_PLC.tmc">
+					<Name>TF6620_S7CommunicationSample_PLC Instance</Name>
+					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<UnrestoredVarLinks ImportTime="2020-08-26T14:19:03">
+						<OwnerA Name="InputDst" Prefix="TIPC^Untitled2^Untitled2 Instance" Type="1">
+							<OwnerB Name="TIID^Device 1 (RT-Ethernet Adapter)^Device 1 (RT-Ethernet Adapter)_Obj1 (TCP/UDP RT)^Object1 (S7 Connector)^Object1 (S7 Single Request)">
+								<Link VarA="MAIN.byReceiveCounter" TypeA="BYTE" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="Status^ReceiveCounter" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^Untitled2^Untitled2 Instance" Type="2">
+							<OwnerB Name="TIID^Device 1 (RT-Ethernet Adapter)^Device 1 (RT-Ethernet Adapter)_Obj1 (TCP/UDP RT)^Object1 (S7 Connector)^Object1 (S7 Single Request)">
+								<Link VarA="MAIN.bStartWriteRequest" TypeA="BOOL" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Control^WriteToS7Enable" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN.bySendRequest" TypeA="BYTE" InOutA="1" GuidA="{18071995-0000-0000-0000-000000000001}" VarB="Control^SendRequest" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<Contexts>
+						<Context>
+							<Id NeedCalleeCall="true">0</Id>
+							<Name>PlcTask</Name>
+							<ManualConfig>
+								<OTCID>#x02010030</OTCID>
+							</ManualConfig>
+							<Priority>20</Priority>
+							<CycleTime>10000000</CycleTime>
+						</Context>
+					</Contexts>
+					<InitSymbols>
+						<InitSymbol>
+							<Name>MAIN.oidModuleInstance</Name>
+							<Type GUID="{18071995-0000-0000-0000-00000000000F}">OTCID</Type>
+							<Data>50000101</Data>
+						</InitSymbol>
+					</InitSymbols>
+					<TaskPouOids>
+						<TaskPouOid Prio="20" OTCID="#x08502001"/>
+					</TaskPouOids>
+				</Instance>
+			</Project>
+		</Plc>
+		<Io>
+			<Device Id="1" DevType="109" DevFlags="#x0004">
+				<Name>Device 1 (RT-Ethernet Adapter)</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Ethernet 2 (X000)</DeviceDesc>
+						<DeviceName>\DEVICE\{822BB72D-69CE-49B5-9537-5362DBEC29B6}</DeviceName>
+						<DeviceData>0001053e25cd</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Module Id="#x01010050" KeepUnrestoredLinks="2">
+					<Name>Device 1 (RT-Ethernet Adapter)_Obj2 (TCP/UDP RT)</Name>
+					<ImageId>1000</ImageId>
+					<TmcDesc GUID="{080D0399-6A65-408D-80E1-18D8F699496A}">
+						<Name>TCP/UDP RT</Name>
+						<CLSID ClassFactory="TCIOETH">{03010070-0000-0000-F000-000000000064}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{081AC839-28D0-49CA-9792-72680E1F3249}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>PSO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010035-0000-0000-E000-000000000064}">ITcIoEthProtocol</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{0301009E-0000-0000-E000-000000000064}">ITcIoArpPing</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{0301009D-0000-0000-E000-000000000064}">ITcIoIpStackControl</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010097-0000-0000-E000-000000000064}">ITcIoUdpProtocol</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010098-0000-0000-E000-000000000064}">ITcIoTcpProtocol</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter>
+								<Name>TcIoIpSettings</Name>
+								<BitSize>128</BitSize>
+								<SubItem>
+									<Name>IpAddress</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>0</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>SubnetMask</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>Gateway</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>DhcpEnable</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>96</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>ManualSettings</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>104</BitOffs>
+								</SubItem>
+								<PTCID>#x03002050</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMaxReceivers</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>4</Value>
+								</Default>
+								<PTCID>#x03011101</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMaxPendingOnArp</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>40</Value>
+								</Default>
+								<PTCID>#x03011103</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMacCacheSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>64</Value>
+								</Default>
+								<PTCID>#x03011104</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011105</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpMaxReceivers</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>4</Value>
+								</Default>
+								<PTCID>#x03011111</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011112</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpCheckCrc</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>TRUE</EnumText>
+								</Default>
+								<PTCID>#x03011113</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>MulticastIpList</Name>
+								<BitSize>0</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</BaseType>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements Min="0" Max="8">0</Elements>
+								</ArrayInfo>
+								<PTCID>#x0301110d</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011122</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpCheckCrc</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>TRUE</EnumText>
+								</Default>
+								<PTCID>#x03011123</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMaxSocketCount</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>32</Value>
+								</Default>
+								<PTCID>#x03011124</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpReceiveBufferSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>16192</Value>
+								</Default>
+								<PTCID>#x03011125</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTransmitBufferSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>16192</Value>
+								</Default>
+								<PTCID>#x03011126</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMaxRetry</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>5</Value>
+								</Default>
+								<PTCID>#x03011127</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutWait</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>60000</Value>
+								</Default>
+								<PTCID>#x03011128</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutCon</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>5000</Value>
+								</Default>
+								<PTCID>#x03011129</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutIdle</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1000</Value>
+								</Default>
+								<PTCID>#x03011130</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpRoundTripTime</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>3000</Value>
+								</Default>
+								<PTCID>#x03011131</PTCID>
+							</Parameter>
+							<Parameter OnlineParameter="true">
+								<Name>IpStackDiagnosis</Name>
+								<BitSize>768</BitSize>
+								<BaseType GUID="{38621CD5-4239-4327-97F7-35F1414B7265}">IpStackDiagnosis</BaseType>
+								<PTCID>#x03011108</PTCID>
+							</Parameter>
+						</Parameters>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002040</PTCID>
+								<Name>ITcIoEthAdapter</Name>
+								<Type GUID="{03010034-0000-0000-E000-000000000064}"></Type>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Properties>
+							<Property>
+								<Name>Category</Name>
+								<Value>NeedEthernetAdapterPort</Value>
+							</Property>
+							<Property>
+								<Name>Category</Name>
+								<Value>NeedIoIdleTask</Value>
+							</Property>
+							<Property>
+								<Name>ChildCategory</Name>
+								<Value>IpProtocol</Value>
+							</Property>
+						</Properties>
+						<ParentOTCID>#x03010010</ParentOTCID>
+						<ParameterValues>
+							<Value>
+								<Name>TcIoIpSettings.IpAddress</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.SubnetMask</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.Gateway</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.DhcpEnable</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.ManualSettings</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
+								<Name>IpMaxReceivers</Name>
+								<Value>4</Value>
+							</Value>
+							<Value>
+								<Name>IpMaxPendingOnArp</Name>
+								<Value>40</Value>
+							</Value>
+							<Value>
+								<Name>IpMacCacheSize</Name>
+								<Value>64</Value>
+							</Value>
+							<Value>
+								<Name>IpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>UdpMaxReceivers</Name>
+								<Value>4</Value>
+							</Value>
+							<Value>
+								<Name>UdpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>UdpCheckCrc</Name>
+								<EnumText>TRUE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>TcpCheckCrc</Name>
+								<EnumText>TRUE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcpMaxSocketCount</Name>
+								<Value>32</Value>
+							</Value>
+							<Value>
+								<Name>TcpReceiveBufferSize</Name>
+								<Value>16192</Value>
+							</Value>
+							<Value>
+								<Name>TcpTransmitBufferSize</Name>
+								<Value>16192</Value>
+							</Value>
+							<Value>
+								<Name>TcpMaxRetry</Name>
+								<Value>5</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutWait</Name>
+								<Value>60000</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutCon</Name>
+								<Value>5000</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutIdle</Name>
+								<Value>1000</Value>
+							</Value>
+							<Value>
+								<Name>TcpRoundTripTime</Name>
+								<Value>3000</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nLinkStatusChangedCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nAllocFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nArpTimeoutFrames</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nDroppedFrames</Name>
+								<Value>0</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>ITcIoEthAdapter</Name>
+								<OTCID>#x00000000</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+				</Module>
+				<Ethernet DeviceDesc="Ethernet 2 (X000)" Ports="1" VLanIds="0a0014001e00280032003c00460050005a0064006e00780082008c009600a000aa00b400be00c800d200dc00e600f000fa0004010e01180122012c01360140014a0154015e01680172017c01860190019a01a401ae01b801c201cc01d601e001ea01f401fe01080212021c02260230023a0244024e02580262026c0276028002">
+					<Esl SyncSlaveProtocolPort="-1"/>
+				</Ethernet>
+			</Device>
+		</Io>
+	</Project>
+</TcSmProject>

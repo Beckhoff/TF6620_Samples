@@ -1,3 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <FileVersion>1.0.0.0</FileVersion>
@@ -7,7 +8,7 @@
     <DownloadApplicationInfo>true</DownloadApplicationInfo>
     <WriteProductVersion>true</WriteProductVersion>
     <GenerateTpy>false</GenerateTpy>
-    <Name>TF6620_S7CommunicationSamplePlc</Name>
+    <Name>TF6620_S7CommunicationSample_SysMan</Name>
     <ProgramVersion>3.1.4023.0</ProgramVersion>
     <Application>{86d65587-683c-4f28-b97f-40a1cd2e98e6}</Application>
     <TypeSystem>{efbd9c8c-d2de-4975-97bc-22995eefcead}</TypeSystem>
@@ -35,14 +36,9 @@
     <Compile Include="POUs\MAIN.TcPOU">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="POUs\MAIN2.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DUTs" />
-    <Folder Include="GVLs" />
-    <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
@@ -64,7 +60,7 @@
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="TF6620_S7CommunicationSamplePlc.tmc">
+    <None Include="TF6620_S7CommunicationSample_SysMan.tmc">
       <SubType>Content</SubType>
     </None>
   </ItemGroup>

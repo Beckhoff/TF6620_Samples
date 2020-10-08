@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.10">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4025.3">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">S7COMM_CONNECT_STATE</Name>
@@ -1186,7 +1186,7 @@
 		<ImageData Id="1002">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e00000000000000000000ffffff00f6f6f640f6f6f640f6f6f640ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff004e5ca0ff3144a0ff6b74a0fff6f6f6a0ffffff007d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff4e5ca0ff293da0ff6b74a0fff6f6f6a00d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff3648a0ff4e5ca0ffadb477ff9aa15aff98a058ff979f57ffabaf71ffacb47effd2d6b4fff0f1e8ff9ca65eff7e8c25ff7e8a2affa5ab71ff4e5ca0ff293da0ff7e84a0fff6f6f6a0838c2dff798721ff7c882dff7e8925ff7e8a2bff7c872bffbec490ffffffff00cad0aaff87933cff7e8b28ff4e5ca0ff293da0ff7e84a0fff6f6f6a0ffffff00ffffff00ffffff00ffffff00c8d0acff859238ff7e8b28ff98a255ffffffff00ffffff00939f52ff808b27ff808b2cffadb679ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00bec596ff838f33ff7e8c28ffa3ab66ffffffff00ffffff00d0d5afff838f32ff7c8b2aff939b4efff0efe6ffffffff00ffffff00ffffff00f7f8f2ffc0c699ff8e9945ff7f8b29ff7e8d2fffe1e3caffffffff00ffffff00ffffff007c8e2aff7e8a2aff7d8a29ffabb575ffffffff00ffffff00ffffff009ca865ff848e35ff7d8b28ff818f34ffe1e4cfffffffff00ffffff00ffffff00ffffff00d9ddc3ff7e8c26ff7e8c27ffa4ac6bfff4f5eeffffffff00bcc492ff7e8b27ff7f8b2aff9ba45afff0f1e8ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff0087953cff7f892cff7a8724ffb5be88ffffffff00798622ff859135ffe1e3d5ff7e84a0ff3144a0ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dfe1cdff798a26ff7d8b27ffa2ab66ffeaeddeff849236ffc9cdaaff7e84a0ff293da0ff4e5ca0ffbec68fffcdd1abffdee1c6ffbdc38fffbec490ffbac08affb4bd85ff7b8923ff7e8a28ff7f8b28ffd1d5b1ffedeee5ff7e84a0ff293da0ff4e5ca0ff7f8a2cff7b8727ffa6ad6cffbdc48eff7e8a23ff808b26ff7d8922ff7c8923ff808b27ff808c26ff828b27ffd2d5b2ff4e5ca0ff3648a0ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1ff0d26a1fff6f6f6a06b74a0ff293da0ff4e5ca0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0ff7d83a0fff0f1e800f6f6f6a06b74a0ff3144a0ff4e5ca0fff0f1e800f0f1e800f0f1e800f0f1e800f0f1e800f0f1e800f0f1e800f6f6f640f6f6f640f6f6f640f0f1e800</ImageData>
 		<ImageData Id="1003">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e00000000000000000000ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00f6f6f601dbdeec658f8eb0e5b1b2cba9ffffff00a7acd186132ba2ff0d26a1ff0d26a1ff0d26a1ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00d1d3e52f6c72aee80d26a0ff6974bafcf6f6f642a7acd186132ba2ff0f27a0ff0d26a0ff5c65aafff7f8f2ffe8e9dcffe8e9dbffe7e8d9fff6f7f0ffffffff00c3c3d5952c3ea0ff2c3c9dffbfc3c8ffd4d9bbffc9ccdbff132ba2ff374aabff27389cff2d3ea1ffadb477ff9aa15aff98a058ff979f57ffabaf71ffacb47effaab1ceff10279dff8485a3ff8f9b43ff7e8a2affa7aca3ff1931a4ff5263baff8383adff11279dff838c2dff798721ff7c882dff7e8925ff7e8a2bff7c872bff8793cbff0d26a1ffa3a8c5ff8b9643ff7e8b28ff9ca666ffcacddbffc0c4dd8ba2a7cbf00d26a1ffffffff00ffffff00ffffff00c8d0acff859238ff7e8b28ffa9afcaff11279dff8383ace9a0ab69ff808b27ff808b2cffadb679fff6f6f6258383ace911279dffffffff00ffffff00ffffff00bec596ff838f33ff7e8c28ffb4b7a4ff2d3ea1ff2b3b9dfcbec2c6ff939d4dff808e31ffa0a765ffcaccdbff2c3b9dfc2d3ea1ffffffff00f7f8f2ffc0c699ff8e9945ff7f8b29ff7e8d2fffdde0ceff6e74afe70d26a0ff2b3b9dfc8283a0ff9a9fb5ff8283a0ff2c3c9cff0d26a0ff6d74aee8ffffff009ca865ff848e35ff7d8b28ff818f34ffe1e4cffff6f6f602dbdeec656e74afe72d3ea1ff11279dff0d26a1ff11279dff2d3ea1ff7a7fb4ffdbdeec65bcc492ff7e8b27ff7f8b2aff9ba45afff0f1e8ffffffff00ffffff00f6f6f602d0d4e52ec2c2d490abb1d6e98793cbffa7adc7ffa2a887ffb9c198fff6f6f602798622ff7e8b29ff889244ffd6dbc2ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dfe1cdff798a26ff7d8b27ffa2ab66ffeaeddeff849236ff7f8a2bff88913dffaeb67fffc2c79dffbec68fffcdd1abffdee1c6ffbdc38fffbec490ffbac08affb4bd85ff7b8923ff7e8a28ff7f8b28ffd1d5b1ffdee2cbff768523ff7f8b27ff7d8a27ff7f8a2cff7b8727ffa6ad6cffbdc48eff7e8a23ff808b26ff7d8922ff7c8923ff808b27ff808c26ff828b27ffd2d5b2ffffffff00f3f4ecffd0d3b5ffb6bb8bffb7bc8cffe0e2ceffffffff00e7e9d8ffd1d5b3ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b3ffd3d6b3ffeff0e4ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000</ImageData>
 	</ImageDatas>
-	<Project ProjectGUID="{946498C8-DB84-43E6-9CBE-1ED387D9291C}" TargetNetId="5.62.192.46.1.1" ShowHideConfigurations="#x106">
+	<Project ProjectGUID="{946498C8-DB84-43E6-9CBE-1ED387D9291C}" TargetNetId="5.25.123.60.1.1" Target64Bit="true" ShowHideConfigurations="#x3c7">
 		<System>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
@@ -1195,9 +1195,9 @@
 			</Tasks>
 		</System>
 		<Plc>
-			<Project GUID="{A8B05F93-9CDD-4E55-BE28-81F6A387D8B7}" Name="TF6620_S7CommunicationSamplePlc" PrjFilePath="TF6620_S7CommunicationSamplePlc\TF6620_S7CommunicationSamplePlc.plcproj" TmcFilePath="TF6620_S7CommunicationSamplePlc\TF6620_S7CommunicationSamplePlc.tmc" ReloadTmc="true" AmsPort="851" TargetArchiveSettings="#x0002" FileArchiveSettings="#x000c" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TF6620_S7CommunicationSamplePlc\TF6620_S7CommunicationSamplePlc.tmc">
-					<Name>TF6620_S7CommunicationSamplePlc Instance</Name>
+			<Project GUID="{A8B05F93-9CDD-4E55-BE28-81F6A387D8B7}" Name="TF6620_S7CommunicationSample_SysMan" PrjFilePath="TF6620_S7CommunicationSample_SysMan\TF6620_S7CommunicationSample_SysMan.plcproj" TmcFilePath="TF6620_S7CommunicationSample_SysMan\TF6620_S7CommunicationSample_SysMan.tmc" ReloadTmc="true" AmsPort="851" TargetArchiveSettings="#x0002" FileArchiveSettings="#x000c" SymbolicMapping="true">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="TF6620_S7CommunicationSample_SysMan\TF6620_S7CommunicationSample_SysMan.tmc">
+					<Name>TF6620_S7CommunicationSample_SysMan Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
@@ -1341,9 +1341,9 @@
 				<Name>Device 1 (RT-Ethernet Adapter)</Name>
 				<AddressInfo>
 					<Pnp>
-						<DeviceDesc>Local Area Connection (X000)</DeviceDesc>
-						<DeviceName>\DEVICE\{A634A3C3-3A66-4D44-A1C2-A725156EBECC}</DeviceName>
-						<DeviceData>0001053ec02f</DeviceData>
+						<DeviceDesc>Ethernet 2 (X000)</DeviceDesc>
+						<DeviceName>\DEVICE\{822BB72D-69CE-49B5-9537-5362DBEC29B6}</DeviceName>
+						<DeviceData>0001053e25cd</DeviceData>
 					</Pnp>
 				</AddressInfo>
 				<Module Id="#x01010010" KeepUnrestoredLinks="2">
@@ -1810,7 +1810,7 @@
 						<Xml>
 							<TcSmExtensions>
 								<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}">
-									<value1>169</value1>
+									<value1>173</value1>
 								</TcSmExtension>
 							</TcSmExtensions>
 						</Xml>
@@ -2065,7 +2065,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C010}">
-										<value1>66</value1>
+										<value1>69</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
@@ -2662,7 +2662,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C020}">
-										<value1>56</value1>
+										<value1>59</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
@@ -3215,466 +3215,7 @@
 						</Module>
 					</Module>
 				</Module>
-				<Module Id="#x01010050" KeepUnrestoredLinks="2">
-					<Name>Device 1 (RT-Ethernet Adapter)_Obj2 (TCP/UDP RT)</Name>
-					<ImageId>1000</ImageId>
-					<TmcDesc GUID="{080D0399-6A65-408D-80E1-18D8F699496A}">
-						<Name>TCP/UDP RT</Name>
-						<CLSID ClassFactory="TCIOETH">{03010070-0000-0000-F000-000000000064}</CLSID>
-						<Licenses>
-							<License>
-								<LicenseId>{081AC839-28D0-49CA-9792-72680E1F3249}</LicenseId>
-							</License>
-						</Licenses>
-						<InitSequence>PSO</InitSequence>
-						<Contexts>
-							<Context>
-								<Id>1</Id>
-							</Context>
-						</Contexts>
-						<Interfaces>
-							<Interface>
-								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
-							</Interface>
-							<Interface>
-								<Type GUID="{03010035-0000-0000-E000-000000000064}">ITcIoEthProtocol</Type>
-							</Interface>
-							<Interface>
-								<Type GUID="{0301009E-0000-0000-E000-000000000064}">ITcIoArpPing</Type>
-							</Interface>
-							<Interface>
-								<Type GUID="{0301009D-0000-0000-E000-000000000064}">ITcIoIpStackControl</Type>
-							</Interface>
-							<Interface>
-								<Type GUID="{03010097-0000-0000-E000-000000000064}">ITcIoUdpProtocol</Type>
-							</Interface>
-							<Interface>
-								<Type GUID="{03010098-0000-0000-E000-000000000064}">ITcIoTcpProtocol</Type>
-							</Interface>
-						</Interfaces>
-						<Parameters>
-							<Parameter>
-								<Name>TcIoIpSettings</Name>
-								<BitSize>128</BitSize>
-								<SubItem>
-									<Name>IpAddress</Name>
-									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
-									<BitSize>32</BitSize>
-									<BitOffs>0</BitOffs>
-								</SubItem>
-								<SubItem>
-									<Name>SubnetMask</Name>
-									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
-									<BitSize>32</BitSize>
-									<BitOffs>32</BitOffs>
-								</SubItem>
-								<SubItem>
-									<Name>Gateway</Name>
-									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
-									<BitSize>32</BitSize>
-									<BitOffs>64</BitOffs>
-								</SubItem>
-								<SubItem>
-									<Name>DhcpEnable</Name>
-									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-									<BitSize>8</BitSize>
-									<BitOffs>96</BitOffs>
-								</SubItem>
-								<SubItem>
-									<Name>ManualSettings</Name>
-									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-									<BitSize>8</BitSize>
-									<BitOffs>104</BitOffs>
-								</SubItem>
-								<PTCID>#x03002050</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>IpMaxReceivers</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>4</Value>
-								</Default>
-								<PTCID>#x03011101</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>IpMaxPendingOnArp</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>40</Value>
-								</Default>
-								<PTCID>#x03011103</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>IpMacCacheSize</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>64</Value>
-								</Default>
-								<PTCID>#x03011104</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>IpMTU</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>1514</Value>
-								</Default>
-								<PTCID>#x03011105</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>UdpMaxReceivers</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>4</Value>
-								</Default>
-								<PTCID>#x03011111</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>UdpMTU</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>1514</Value>
-								</Default>
-								<PTCID>#x03011112</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>UdpCheckCrc</Name>
-								<BitSize>8</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-								<Default>
-									<EnumText>TRUE</EnumText>
-								</Default>
-								<PTCID>#x03011113</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>MulticastIpList</Name>
-								<BitSize>0</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</BaseType>
-								<ArrayInfo>
-									<LBound>0</LBound>
-									<Elements Min="0" Max="8">0</Elements>
-								</ArrayInfo>
-								<PTCID>#x0301110d</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpMTU</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>1514</Value>
-								</Default>
-								<PTCID>#x03011122</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpCheckCrc</Name>
-								<BitSize>8</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
-								<Default>
-									<EnumText>TRUE</EnumText>
-								</Default>
-								<PTCID>#x03011123</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpMaxSocketCount</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>32</Value>
-								</Default>
-								<PTCID>#x03011124</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpReceiveBufferSize</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>16192</Value>
-								</Default>
-								<PTCID>#x03011125</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpTransmitBufferSize</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>16192</Value>
-								</Default>
-								<PTCID>#x03011126</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpMaxRetry</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>5</Value>
-								</Default>
-								<PTCID>#x03011127</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpTimeoutWait</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>60000</Value>
-								</Default>
-								<PTCID>#x03011128</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpTimeoutCon</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>5000</Value>
-								</Default>
-								<PTCID>#x03011129</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpTimeoutIdle</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>1000</Value>
-								</Default>
-								<PTCID>#x03011130</PTCID>
-							</Parameter>
-							<Parameter>
-								<Name>TcpRoundTripTime</Name>
-								<BitSize>32</BitSize>
-								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
-								<Default>
-									<Value>3000</Value>
-								</Default>
-								<PTCID>#x03011131</PTCID>
-							</Parameter>
-							<Parameter OnlineParameter="true">
-								<Name>IpStackDiagnosis</Name>
-								<BitSize>768</BitSize>
-								<BaseType GUID="{38621CD5-4239-4327-97F7-35F1414B7265}">IpStackDiagnosis</BaseType>
-								<PTCID>#x03011108</PTCID>
-							</Parameter>
-						</Parameters>
-						<InterfacePointers>
-							<InterfacePointer>
-								<PTCID>#x03002040</PTCID>
-								<Name>ITcIoEthAdapter</Name>
-								<Type GUID="{03010034-0000-0000-E000-000000000064}"></Type>
-							</InterfacePointer>
-						</InterfacePointers>
-						<Properties>
-							<Property>
-								<Name>Category</Name>
-								<Value>NeedEthernetAdapterPort</Value>
-							</Property>
-							<Property>
-								<Name>Category</Name>
-								<Value>NeedIoIdleTask</Value>
-							</Property>
-							<Property>
-								<Name>ChildCategory</Name>
-								<Value>IpProtocol</Value>
-							</Property>
-						</Properties>
-						<ParentOTCID>#x03010010</ParentOTCID>
-						<ParameterValues>
-							<Value>
-								<Name>TcIoIpSettings.IpAddress</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>TcIoIpSettings.SubnetMask</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>TcIoIpSettings.Gateway</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>TcIoIpSettings.DhcpEnable</Name>
-								<EnumText>FALSE</EnumText>
-							</Value>
-							<Value>
-								<Name>TcIoIpSettings.ManualSettings</Name>
-								<EnumText>FALSE</EnumText>
-							</Value>
-							<Value>
-								<Name>IpMaxReceivers</Name>
-								<Value>4</Value>
-							</Value>
-							<Value>
-								<Name>IpMaxPendingOnArp</Name>
-								<Value>40</Value>
-							</Value>
-							<Value>
-								<Name>IpMacCacheSize</Name>
-								<Value>64</Value>
-							</Value>
-							<Value>
-								<Name>IpMTU</Name>
-								<Value>1514</Value>
-							</Value>
-							<Value>
-								<Name>UdpMaxReceivers</Name>
-								<Value>4</Value>
-							</Value>
-							<Value>
-								<Name>UdpMTU</Name>
-								<Value>1514</Value>
-							</Value>
-							<Value>
-								<Name>UdpCheckCrc</Name>
-								<EnumText>TRUE</EnumText>
-							</Value>
-							<Value>
-								<Name>TcpMTU</Name>
-								<Value>1514</Value>
-							</Value>
-							<Value>
-								<Name>TcpCheckCrc</Name>
-								<EnumText>TRUE</EnumText>
-							</Value>
-							<Value>
-								<Name>TcpMaxSocketCount</Name>
-								<Value>32</Value>
-							</Value>
-							<Value>
-								<Name>TcpReceiveBufferSize</Name>
-								<Value>16192</Value>
-							</Value>
-							<Value>
-								<Name>TcpTransmitBufferSize</Name>
-								<Value>16192</Value>
-							</Value>
-							<Value>
-								<Name>TcpMaxRetry</Name>
-								<Value>5</Value>
-							</Value>
-							<Value>
-								<Name>TcpTimeoutWait</Name>
-								<Value>60000</Value>
-							</Value>
-							<Value>
-								<Name>TcpTimeoutCon</Name>
-								<Value>5000</Value>
-							</Value>
-							<Value>
-								<Name>TcpTimeoutIdle</Name>
-								<Value>1000</Value>
-							</Value>
-							<Value>
-								<Name>TcpRoundTripTime</Name>
-								<Value>3000</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.ip.nSendCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.ip.nSendFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.ip.nRecvCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.ip.nRecvFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpRequest.nSendCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpRequest.nSendFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpRequest.nRecvCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpRequest.nRecvFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpReply.nSendCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpReply.nSendFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpReply.nRecvCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.arpReply.nRecvFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingRequest.nSendCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingRequest.nSendFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingRequest.nRecvCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingRequest.nRecvFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingReply.nSendCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingReply.nSendFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingReply.nRecvCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.pingReply.nRecvFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.nLinkStatusChangedCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.nAllocFailCnt</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.nArpTimeoutFrames</Name>
-								<Value>0</Value>
-							</Value>
-							<Value>
-								<Name>IpStackDiagnosis.nDroppedFrames</Name>
-								<Value>0</Value>
-							</Value>
-						</ParameterValues>
-						<InterfacePointerValues>
-							<Value>
-								<Name>ITcIoEthAdapter</Name>
-								<OTCID>#x00000000</OTCID>
-							</Value>
-						</InterfacePointerValues>
-					</TmcDesc>
-				</Module>
-				<Ethernet DeviceDesc="Local Area Connection (X000)" Ports="1" VLanIds="0a0014001e00280032003c00460050005a0064006e00780082008c009600a000aa00b400be00c800d200dc00e600f000fa0004010e01180122012c01360140014a0154015e01680172017c01860190019a01a401ae01b801c201cc01d601e001ea01f401fe01080212021c02260230023a0244024e02580262026c0276028002">
+				<Ethernet DeviceDesc="Ethernet 2 (X000)" Ports="1" VLanIds="0a0014001e00280032003c00460050005a0064006e00780082008c009600a000aa00b400be00c800d200dc00e600f000fa0004010e01180122012c01360140014a0154015e01680172017c01860190019a01a401ae01b801c201cc01d601e001ea01f401fe01080212021c02260230023a0244024e02580262026c0276028002">
 					<Esl SyncSlaveProtocolPort="-1"/>
 				</Ethernet>
 			</Device>
@@ -3684,7 +3225,7 @@
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500820000101}" Id="#x02030010"/>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500830000101}" Id="#x02030020"/>
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500840000101}" Id="#x02030030"/>
-		<OwnerA Name="TIPC^TF6620_S7CommunicationSamplePlc^TF6620_S7CommunicationSamplePlc Instance">
+		<OwnerA Name="TIPC^TF6620_S7CommunicationSample_SysMan^TF6620_S7CommunicationSample_SysMan Instance">
 			<OwnerB Name="TIID^Device 1 (RT-Ethernet Adapter)^Device 1 (RT-Ethernet Adapter)_Obj1 (TCP/UDP RT)^Object1 (S7 Connector)">
 				<Link VarA="PlcTask Inputs^MAIN.stS7Info.bS7Error" VarB="Status^Error"/>
 				<Link VarA="PlcTask Inputs^MAIN.stS7Info.eS7CommState" VarB="Status^State"/>

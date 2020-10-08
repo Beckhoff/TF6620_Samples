@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.852
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "TF6620_S7CommunicationSample", "TF6620_S7CommunicationSample.tsproj", "{946498C8-DB84-43E6-9CBE-1ED387D9291C}"
+Project("{B1E792BE-AA5F-4E3C-8C82-674BF9C0715B}") = "TF6620_S7CommunicationSample_SysMan", "TF6620_S7CommunicationSample_SysMan.tsproj", "{946498C8-DB84-43E6-9CBE-1ED387D9291C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -53,6 +53,7 @@ CASE nStateWrite OF
 	0:
 		IF bStartWriteRequest THEN
 			bStartWriteRequest := FALSE;
+			bWriteRequestDone := FALSE;
 			bWriteEnable := TRUE;
 			nStateWrite := nStateWrite + 1;
 		END_IF
@@ -95,6 +96,7 @@ END_CASE
       <LineId Id="71" Count="2" />
       <LineId Id="82" Count="0" />
       <LineId Id="113" Count="0" />
+      <LineId Id="141" Count="0" />
       <LineId Id="117" Count="0" />
       <LineId Id="87" Count="0" />
       <LineId Id="84" Count="1" />

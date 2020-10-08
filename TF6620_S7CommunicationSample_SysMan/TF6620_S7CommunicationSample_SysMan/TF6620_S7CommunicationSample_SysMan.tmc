@@ -2266,7 +2266,7 @@
   </DataTypes>
   <Modules>
     <Module GUID="{86D65587-683C-4F28-B97F-40A1CD2E98E6}" TcSmClass="TComPlcObjDef">
-      <Name>TF6620_S7CommunicationSamplePlc</Name>
+      <Name>TF6620_S7CommunicationSample_SysMan</Name>
       <CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
       <Licenses>
         <License>
