@@ -1810,7 +1810,7 @@
 						<Xml>
 							<TcSmExtensions>
 								<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}">
-									<value1>173</value1>
+									<value1>177</value1>
 								</TcSmExtension>
 							</TcSmExtensions>
 						</Xml>
@@ -2065,7 +2065,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C010}">
-										<value1>69</value1>
+										<value1>72</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
@@ -2662,7 +2662,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C020}">
-										<value1>59</value1>
+										<value1>61</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
