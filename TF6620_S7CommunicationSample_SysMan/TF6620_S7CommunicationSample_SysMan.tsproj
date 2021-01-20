@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4025.3">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.11">
 	<DataTypes>
 		<DataType>
 			<Name GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">S7COMM_CONNECT_STATE</Name>
@@ -1218,6 +1218,42 @@
 							<Type>BYTE</Type>
 						</Var>
 						<Var>
+							<Name>MAIN.stS7Incoming.by1</Name>
+							<Type>BYTE</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.b1</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.b2</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.b3</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.b4</Name>
+							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.w1</Name>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.r1</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.r2</Name>
+							<Type>REAL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.stS7Incoming.i1</Name>
+							<Type>INT</Type>
+						</Var>
+						<Var>
 							<Name>MAIN.stS7IncomingCyclic.by1</Name>
 							<Type>BYTE</Type>
 						</Var>
@@ -1253,42 +1289,6 @@
 							<Name>MAIN.stS7IncomingCyclic.i1</Name>
 							<Type>INT</Type>
 						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.by1</Name>
-							<Type>BYTE</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.b1</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.r1</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.b2</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.b3</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.b4</Name>
-							<Type>BOOL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.w1</Name>
-							<Type>DWORD</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.r2</Name>
-							<Type>REAL</Type>
-						</Var>
-						<Var>
-							<Name>MAIN.stS7Incoming.i1</Name>
-							<Type>INT</Type>
-						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
@@ -1297,13 +1297,13 @@
 							<Type>BYTE</Type>
 						</Var>
 						<Var>
-							<Name>MAIN.i1write</Name>
-							<Type>INT</Type>
-						</Var>
-						<Var>
 							<Name>MAIN.bWriteEnable</Name>
 							<Comment><![CDATA[ Write variables ]]></Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN.i1write</Name>
+							<Type>INT</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2020-08-26T14:19:03">
@@ -1810,7 +1810,7 @@
 						<Xml>
 							<TcSmExtensions>
 								<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}">
-									<value1>177</value1>
+									<value1>183</value1>
 								</TcSmExtension>
 							</TcSmExtensions>
 						</Xml>
@@ -2033,7 +2033,7 @@
 								</Value>
 								<Value>
 									<Name>TcpServerIpAddress</Name>
-									<Value>167977061</Value>
+									<Value>3232281189</Value>
 								</Value>
 								<Value>
 									<Name>CpuType</Name>
@@ -2065,7 +2065,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C010}">
-										<value1>72</value1>
+										<value1>75</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
@@ -2662,7 +2662,7 @@
 							<Xml>
 								<TcSmExtensions>
 									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C020}">
-										<value1>61</value1>
+										<value1>65</value1>
 									</TcSmExtension>
 								</TcSmExtensions>
 							</Xml>
