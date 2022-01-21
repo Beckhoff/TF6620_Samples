@@ -1,0 +1,3306 @@
+<?xml version="1.0"?>
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4025.7">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{03010035-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoEthProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>CheckFrame</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nVLanTag</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nTimeStamp</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>LinkStatusChanged</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>bLinkError</Name>
+					<Type GUID="{9060AE9D-214D-4685-A4C0-CD1082626764}">BOOL32</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" TcBaseType="true">ETYPE_VLAN_HEADER</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+		</DataType>
+		<DataType>
+			<Name GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}" TcBaseType="true">ETHERNET_ADDRESS</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>b</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000001}">BYTE</Type>
+				<ArrayInfo>
+					<LBound>0</LBound>
+					<Elements>6</Elements>
+				</ArrayInfo>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<Hides>
+				<Hide GUID="{F45D8924-F151-4141-9296-7C8BB697BD07}"/>
+			</Hides>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010096-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoArpPingRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ArpReply</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>macAddr</Name>
+					<Type GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}">ETHERNET_ADDRESS</Type>
+					<BitSize>48</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>PingReply</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{0301009E-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoArpPing</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>PingRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" Optional="0">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}" Optional="0">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ArpRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>macAddr</Name>
+					<Type GUID="{CC07E0A0-FC03-45CD-BFD9-D46B7C731E7C}" PointerTo="1" Optional="0">ETHERNET_ADDRESS</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>RegisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010096-0000-0000-E000-000000000064}">ITcIoArpPingRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>UnregisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010096-0000-0000-E000-000000000064}">ITcIoArpPingRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{0301009D-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoIpStackControl</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>DeleteArpCache</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetIpData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pIpAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pIpSubnetMask</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pIpGateway</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" PointerTo="1">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010095-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoUdpProtocolRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ReceiveData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpDestPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpSrcPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010097-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoUdpProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>SendData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipDestAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpDestPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>udpSrcPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>bCalcUdpCheckSum</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000030}" Optional="0">BOOL</Type>
+					<BitSize>8</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pVlan</Name>
+					<Type GUID="{478C4436-6F33-4F6F-B4A8-88074B54DCD4}" PointerTo="1" Optional="0">ETYPE_VLAN_HEADER</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>RegisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>udpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010095-0000-0000-E000-000000000064}">ITcIoUdpProtocolRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>UnregisterReceiver</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>udpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{7CECC506-F55F-4594-B611-972D650865D2}" TcBaseType="true">TCPIP_EVENT</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_NONE]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_ERROR]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_RESET]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_TIMEOUT]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_CONN_ESTABLISHED]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_CONN_INCOMING]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_CONN_CLOSED]]></Text>
+				<Enum>6</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_CONN_IDLE]]></Text>
+				<Enum>7</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_DATA_RECEIVED]]></Text>
+				<Enum>8</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_DATA_SENT]]></Text>
+				<Enum>9</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_KEEP_ALIVE]]></Text>
+				<Enum>10</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_LINKCONNECT]]></Text>
+				<Enum>11</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[TCPIP_EVENT_LINKDISCONNECT]]></Text>
+				<Enum>12</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010099-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoTcpProtocolRecv</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ReceiveData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>ReceiveEvent</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpEvent</Name>
+					<Type GUID="{7CECC506-F55F-4594-B611-972D650865D2}">TCPIP_EVENT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{03010098-0000-0000-E000-000000000064}" TcBaseType="true">ITcIoTcpProtocol</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>AllocSocket</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ipRecv</Name>
+					<Type GUID="{03010099-0000-0000-E000-000000000064}">ITcIoTcpProtocolRecv</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>FreeSocket</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Connect</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>ipRemoteAddress</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>IsConnected</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Close</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Listen</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>tcpPort</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Accept</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SendData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nSendData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CheckReceived</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetRemoteIpAddr</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>remoteIpAddr</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetFreeSendDataSize</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>socketId</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-00000000003E}" TcBaseType="true" HideSubItems="true">IPADDR</Name>
+			<BitSize>32</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>4</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d</Printf>
+				<Parameter>[3]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[0]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Name>
+			<BitSize>128</BitSize>
+			<SubItem>
+				<Name>nSendCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nSendFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRecvCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nRecvFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{38621CD5-4239-4327-97F7-35F1414B7265}">IpStackDiagnosis</Name>
+			<BitSize>768</BitSize>
+			<SubItem>
+				<Name>ip</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>arpRequest</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>arpReply</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>256</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pingRequest</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>384</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>pingReply</Name>
+				<Type GUID="{C5CDC22A-4E80-47FE-859B-49877A88E874}">IpStackServiceDiagnosis</Type>
+				<BitSize>128</BitSize>
+				<BitOffs>512</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nLinkStatusChangedCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>640</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nAllocFailCnt</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>672</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nArpTimeoutFrames</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>704</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>nDroppedFrames</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>736</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">E_S7COMM_CONNECT_STATE</Name>
+			<BitSize>8</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000002}">USINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_IDLE]]></Text>
+				<Enum>0</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_START]]></Text>
+				<Enum>1</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_TCP_SETUP]]></Text>
+				<Enum>16</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_TCP_WAIT]]></Text>
+				<Enum>17</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_COTP_SETUP]]></Text>
+				<Enum>32</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_COTP_WAIT]]></Text>
+				<Enum>33</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_S7_SETUP]]></Text>
+				<Enum>48</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_S7_WAIT]]></Text>
+				<Enum>49</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_CONNECTED]]></Text>
+				<Enum>64</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_TCP_ERROR]]></Text>
+				<Enum>241</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_COTP_ERROR]]></Text>
+				<Enum>244</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_S7_ERROR]]></Text>
+				<Enum>245</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_RESET]]></Text>
+				<Enum>255</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_TCP_SETUP_ERROR]]></Text>
+				<Enum>242</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CONNECT_STATE_TCP_TIMEOUT_ERROR]]></Text>
+				<Enum>243</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{F208F2FD-FD91-4969-9F31-239B3DD89F90}">ITcIoS7CommRequest</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>ReceiveData</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pParam</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nParamLen</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nDataLen</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>GetFrame</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}" ReferenceTo="true">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nLen</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}" ReferenceTo="true">UDINT</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>CycleUpdate</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>ConnectionStatus</Name>
+					<Type GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">E_S7COMM_CONNECT_STATE</Type>
+					<BitSize>8</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>WantsToSend</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{3D113D10-1FF9-4A6F-BF3B-FF2CB2053387}">ITcIoS7CommConnector</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>AddRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>spRequest</Name>
+					<Type GUID="{F208F2FD-FD91-4969-9F31-239B3DD89F90}">ITcIoS7CommRequest</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{B2E5149C-0D94-492F-9FB3-24601C7D2AFA}">E_S7COMM_CPUTYPE</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CPUTYPE_S7300]]></Text>
+				<Enum>2</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CPUTYPE_S7400]]></Text>
+				<Enum>3</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CPUTYPE_S71200]]></Text>
+				<Enum>4</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_CPUTYPE_S71500]]></Text>
+				<Enum>5</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{60ACD7B4-D0AE-4E84-85AC-8C28765136B1}">ITcIoPlcS7CommConnection</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>Connect</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>IpAdr</Name>
+					<Type GUID="{18071995-0000-0000-0000-00000000003E}" PointerTo="1">IPADDR</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>CpuType</Name>
+					<Type GUID="{B2E5149C-0D94-492F-9FB3-24601C7D2AFA}">E_S7COMM_CPUTYPE</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>Rack</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>Slot</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>Reset</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetStatus</Name>
+				<ReturnType GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">E_S7COMM_CONNECT_STATE</ReturnType>
+				<ReturnBitSize>8</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>CyclicCallFromPlc</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{ADD31D48-21B6-4998-B6BE-2AFBD4229872}">E_S7COMM_DATAAREA</Name>
+			<BitSize>16</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_DATAAREA_INPUT]]></Text>
+				<Enum>129</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_DATAAREA_OUTPUT]]></Text>
+				<Enum>130</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_DATAAREA_FLAGS]]></Text>
+				<Enum>131</Enum>
+			</EnumInfo>
+			<EnumInfo>
+				<Text><![CDATA[S7COMM_DATAAREA_DATA_BLOCKS]]></Text>
+				<Enum>132</Enum>
+			</EnumInfo>
+		</DataType>
+		<DataType>
+			<Name GUID="{38A9AF4B-7BFE-42CE-8963-313E3CDCE409}">ITcIoPlcS7CommRequest</Name>
+			<BitSize X64="64">32</BitSize>
+			<BaseType GUID="{00000001-0000-0000-E000-000000000064}">ITcUnknown</BaseType>
+			<Method>
+				<Name>AddReadVar</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pVar</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nBitSize</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nBitOff</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>Area</Name>
+					<Type GUID="{ADD31D48-21B6-4998-B6BE-2AFBD4229872}">E_S7COMM_DATAAREA</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nDatablock</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nFlags</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>AddWriteVar</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pVar</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nBitSize</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nBitOff</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>Area</Name>
+					<Type GUID="{ADD31D48-21B6-4998-B6BE-2AFBD4229872}">E_S7COMM_DATAAREA</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nDatablock</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>nFlags</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+					<BitSize>16</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>RemoveReadVar</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>RemoveWriteVar</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pData</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000018}">PVOID</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SetCycletime</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>nCycletimeMs</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000008}">UDINT</Type>
+					<BitSize>32</BitSize>
+				</Parameter>
+			</Method>
+			<Method>
+				<Name>SendRequest</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+			</Method>
+			<Method>
+				<Name>GetStatus</Name>
+				<ReturnType GUID="{18071995-0000-0000-0000-000000000019}">HRESULT</ReturnType>
+				<ReturnBitSize>32</ReturnBitSize>
+				<Parameter>
+					<Name>pReceiveCounter</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000001}" PointerTo="1">BYTE</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+				<Parameter>
+					<Name>pError</Name>
+					<Type GUID="{18071995-0000-0000-0000-000000000004}" PointerTo="1">WORD</Type>
+					<BitSize X64="64">32</BitSize>
+				</Parameter>
+			</Method>
+		</DataType>
+		<DataType>
+			<Name GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</Name>
+			<BitSize>112</BitSize>
+			<SubItem>
+				<Name>S7DataArea</Name>
+				<Type GUID="{ADD31D48-21B6-4998-B6BE-2AFBD4229872}">E_S7COMM_DATAAREA</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>S7ByteOff</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>S7BitOff</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>S7DataBlock</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SymbolBitSize</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>64</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SymbolBitOffs</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>80</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Flags</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<ImageDatas>
+		<ImageData Id="1000">424de6000000000000007600000028000000100000000e000000010004000000000070000000000000000000000000000000000000000000000000008000008000000080800080000000800080008080000080808000c0c0c0000000ff0000ff000000ffff00ff000000ff00ff00ffff0000ffffff00ffffffffffffffffff788833338887ffff78883bb38887ffffffff3bb3ffffffffffff8778fffffffffffffffffffffffffffffffff999ffff78f78fffffffffff78f78ffff999ffff78f7888fffffffff78f78f78f999ffff78f78f78ffffffff78f7888ff999ffffffffffffffffff</ImageData>
+		<ImageData Id="1001">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e00000000000000000000ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff007a7a7aff959494ff959494ff959494ff005c83ff005c83ff005c83ff005c83ff959494ff959494ff959494ff7a7a7affffffff00ffffff00ffffff00ffffff00797676ffc6bdbcffc6bdbcffc6bdbcff0078acff15a1ddff15a1ddff0078acffc6bdbcffc6bdbcffc6bdbcff797676ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff000078acff15a1ddff15a1ddff0078acffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00f7f8f2ffe8e9dcffe8e9dbffe7e8d9fff6f7f0ffffffff00c6c6c6ff959494ffdadec2ffd1d7b3ffd1d6b5fff0f0e8ffffffff00ffffff00ffffff00ffffff00adb477ff9aa15aff98a058ff979f57ffabaf71ffacb47eff707070ff545353ff9ca65eff7e8c25ff7e8a2affa5ab71ffffffff00ffffff00ffffff00ffffff00838c2dff798721ff7c882dff7e8925ff7e8a2bff7c872bffc6c6c6ff959494ffcad0aaff87933cff7e8b28ff828f32ffeff1e7ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00c8d0acff859238ff7e8b28ff98a255ffffffff00ffffff00939f52ff808b27ff808b2cffadb679ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00bec596ff838f33ff7e8c28ffa3ab66ffffffff00ffffff00d0d5afff838f32ff7c8b2aff939b4efff0efe6ffffffff00ffffff00ffffff00f7f8f2ffc0c699ff8e9945ff7f8b29ff7e8d2fffe1e3caffffffff00ffffff00ffffff007c8e2aff7e8a2aff7d8a29ffabb575ffffffff00ffffff00ffffff009ca865ff848e35ff7d8b28ff818f34ffe1e4cfffffffff00ffffff00ffffff00ffffff00d9ddc3ff7e8c26ff7e8c27ffa4ac6bfff4f5eeffffffff00bcc492ff7e8b27ff7f8b2aff9ba45afff0f1e8ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff0087953cff7f892cff7a8724ffb5be88ffffffff00798622ff7e8b29ff889244ffd6dbc2ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dfe1cdff798a26ff7d8b27ffa2ab66ffeaeddeff849236ff7f8a2bff88913dffaeb67fffc2c79dffbec68fffcdd1abffdee1c6ffbdc38fffbec490ffbac08affb4bd85ff7b8923ff7e8a28ff7f8b28ffd1d5b1ffdee2cbff768523ff7f8b27ff7d8a27ff7f8a2cff7b8727ffa6ad6cffbdc48eff7e8a23ff808b26ff7d8922ff7c8923ff808b27ff808c26ff828b27ffd2d5b2ffffffff00f3f4ecffd0d3b5ffb6bb8bffb7bc8cffe0e2ceffffffff00e7e9d8ffd1d5b3ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b3ffd3d6b3ffeff0e4ff</ImageData>
+		<ImageData Id="1002">424d360400000000000036000000280000001000000010000000010020000000000000000000c40e0000c40e00000000000000000000ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dddce2ffd9dceb775e67aafb293a9aff152a9cff0f27a0ff152a9cff293a9aff5d67a9fcffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dddce2ff98a2d3ad0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0fff7f8f2ffe8e9dcffe8e9dbffe7e8d9fff6f7f0ffffffff00ffffff00dddce2ffadb5cdff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ffadb477ff9aa15aff98a058ff979f57ffabaf71ffacb47effa3ab66ffdddce2ff99a3adff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff838c2dff798721ff7c882dff7e8925ff7e8a2bff7c872bff87933cffdddce2ffa8b0c5ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ffffffff00ffffff00ffffff00c8d0acff859238ff7e8b28ff98a255ffdddce2ff98a2d3ad0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ff0f27a0ffffffff00ffffff00ffffff00bec596ff838f33ff7e8c28ffa3ab66ffdddce2ff98a2d3ad0f27a0ff142a9dff2f3d97ff313f99ff2f3d97ff142a9dff0f27a0ffffffff00f7f8f2ffc0c699ff8e9945ff7f8b29ff7e8d2fffe1e3caffdddce2ff98a2d3ad172da0ff8f95c2ffdddce2ffdedce3ffdddce2ff9096c2ff172da0ffffffff009ca865ff848e35ff7d8b28ff818f34ffe1e4cfffffffff00dddce2ffdddce2ff8181a3fb575c94ffa29db0ff6470b7ffa19db0ff575c94ff8080a3fbbcc492ff7e8b27ff7f8b2aff9ba45afff0f1e8ffffffff00ffffff00ffffff00dddce2ffdddce2ffcbcbd9ffb0b3c7ff7986c6ffaeb2c6ffc0c3c2ffdddce2ff798622ff7e8b29ff889244ffd6dbc2ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00dddce2ffdfe1cdffdddce2ffdddce2ffdddce2ffdddce2ff849236ff7f8a2bff88913dffaeb67fffc2c79dffbec68fffcdd1abffdee1c6ffbdc38fffbec490ffbac08affb4bd85ff7b8923ff7e8a28ff7f8b28ffd1d5b1ffdee2cbff768523ff7f8b27ff7d8a27ff7f8a2cff7b8727ffa6ad6cffbdc48eff7e8a23ff808b26ff7d8922ff7c8923ff808b27ff808c26ff828b27ffd2d5b2ffffffff00f3f4ecffd0d3b5ffb6bb8bffb7bc8cffe0e2ceffffffff00e7e9d8ffd1d5b3ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b4ffd2d6b3ffd3d6b3ffeff0e4ffffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00ffffff00293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000293da000</ImageData>
+	</ImageDatas>
+	<Project ProjectGUID="{ED5B09FB-7FD5-4491-89FB-0539A57F4582}" Target64Bit="true" Utf8Encoding="true" ShowHideConfigurations="#x3cf">
+		<Io>
+			<Device Id="1" DevType="109" DevFlags="#x0004">
+				<Name>RT-Ethernet Adapter</Name>
+				<AddressInfo>
+					<Pnp>
+						<DeviceDesc>Ethernet 2 (X000)</DeviceDesc>
+						<DeviceName>\DEVICE\{CC36C4DB-CBA1-4CCD-8C61-73D4C55E607B}</DeviceName>
+						<DeviceData>0001054f6fad</DeviceData>
+					</Pnp>
+				</AddressInfo>
+				<Module Id="#x01010010" KeepUnrestoredLinks="2">
+					<Name>TCP/UDP RT</Name>
+					<ImageId>1000</ImageId>
+					<TmcDesc GUID="{080D0399-6A65-408D-80E1-18D8F699496A}">
+						<Name>TCP/UDP RT</Name>
+						<CLSID ClassFactory="TCIOETH">{03010070-0000-0000-F000-000000000064}</CLSID>
+						<Licenses>
+							<License>
+								<LicenseId>{081AC839-28D0-49CA-9792-72680E1F3249}</LicenseId>
+							</License>
+						</Licenses>
+						<InitSequence>PSO</InitSequence>
+						<Contexts>
+							<Context>
+								<Id>1</Id>
+							</Context>
+						</Contexts>
+						<Interfaces>
+							<Interface>
+								<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010035-0000-0000-E000-000000000064}">ITcIoEthProtocol</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{0301009E-0000-0000-E000-000000000064}">ITcIoArpPing</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{0301009D-0000-0000-E000-000000000064}">ITcIoIpStackControl</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010097-0000-0000-E000-000000000064}">ITcIoUdpProtocol</Type>
+							</Interface>
+							<Interface>
+								<Type GUID="{03010098-0000-0000-E000-000000000064}">ITcIoTcpProtocol</Type>
+							</Interface>
+						</Interfaces>
+						<Parameters>
+							<Parameter ShowSubItems="true">
+								<Name>TcIoIpSettings</Name>
+								<BitSize>128</BitSize>
+								<SubItem>
+									<Name>IpAddress</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>0</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>SubnetMask</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>32</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>Gateway</Name>
+									<Type GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</Type>
+									<BitSize>32</BitSize>
+									<BitOffs>64</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>DhcpEnable</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>96</BitOffs>
+								</SubItem>
+								<SubItem>
+									<Name>ManualSettings</Name>
+									<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+									<BitSize>8</BitSize>
+									<BitOffs>104</BitOffs>
+								</SubItem>
+								<PTCID>#x03002050</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMaxReceivers</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>4</Value>
+								</Default>
+								<PTCID>#x03011101</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMaxPendingOnArp</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>40</Value>
+								</Default>
+								<PTCID>#x03011103</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMacCacheSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>64</Value>
+								</Default>
+								<PTCID>#x03011104</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011105</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>IpRecvFrameQueueSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>255</Value>
+								</Default>
+								<PTCID>#x03011115</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpMaxReceivers</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>4</Value>
+								</Default>
+								<PTCID>#x03011111</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011112</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>UdpCheckCrc</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>TRUE</EnumText>
+								</Default>
+								<PTCID>#x03011113</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TTL</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+								<Default>
+									<Value>128</Value>
+								</Default>
+								<PTCID>#x03011106</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>MulticastTTL</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+								<Default>
+									<Value>1</Value>
+								</Default>
+								<PTCID>#x0301110a</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>PassiveMode</Name>
+								<Comment><![CDATA[Ethernet adapter frame processing triggered by other protocol]]></Comment>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<PTCID>#x03011133</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>MulticastIpList</Name>
+								<BitSize>0</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</BaseType>
+								<ArrayInfo>
+									<LBound>0</LBound>
+									<Elements Min="0" Max="8">0</Elements>
+								</ArrayInfo>
+								<PTCID>#x0301110d</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMTU</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1514</Value>
+								</Default>
+								<PTCID>#x03011122</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpCheckCrc</Name>
+								<BitSize>8</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+								<Default>
+									<EnumText>TRUE</EnumText>
+								</Default>
+								<PTCID>#x03011123</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMaxSocketCount</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>32</Value>
+								</Default>
+								<PTCID>#x03011124</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpReceiveBufferSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>16192</Value>
+								</Default>
+								<PTCID>#x03011125</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTransmitBufferSize</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>16192</Value>
+								</Default>
+								<PTCID>#x03011126</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpMaxRetry</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>5</Value>
+								</Default>
+								<PTCID>#x03011127</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutWait</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>60000</Value>
+								</Default>
+								<PTCID>#x03011128</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutCon</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>5000</Value>
+								</Default>
+								<PTCID>#x03011129</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpTimeoutIdle</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>1000</Value>
+								</Default>
+								<PTCID>#x03011130</PTCID>
+							</Parameter>
+							<Parameter>
+								<Name>TcpRoundTripTime</Name>
+								<BitSize>32</BitSize>
+								<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+								<Default>
+									<Value>3000</Value>
+								</Default>
+								<PTCID>#x03011131</PTCID>
+							</Parameter>
+							<Parameter OnlineParameter="true">
+								<Name>IpStackDiagnosis</Name>
+								<BitSize>768</BitSize>
+								<BaseType GUID="{38621CD5-4239-4327-97F7-35F1414B7265}">IpStackDiagnosis</BaseType>
+								<PTCID>#x03011108</PTCID>
+							</Parameter>
+						</Parameters>
+						<InterfacePointers>
+							<InterfacePointer>
+								<PTCID>#x03002040</PTCID>
+								<Name>ITcIoEthAdapter</Name>
+								<Type GUID="{03010034-0000-0000-E000-000000000064}"></Type>
+							</InterfacePointer>
+						</InterfacePointers>
+						<Properties>
+							<Property>
+								<Name>Category</Name>
+								<Value>NeedEthernetAdapterPort</Value>
+							</Property>
+							<Property>
+								<Name>Category</Name>
+								<Value>NeedIoIdleTask</Value>
+							</Property>
+							<Property>
+								<Name>ChildCategory</Name>
+								<Value>IpProtocol</Value>
+							</Property>
+						</Properties>
+						<ParentOTCID>#x03010010</ParentOTCID>
+						<ParameterValues>
+							<Value>
+								<Name>TcIoIpSettings.IpAddress</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.SubnetMask</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.Gateway</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.DhcpEnable</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcIoIpSettings.ManualSettings</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
+								<Name>IpMaxReceivers</Name>
+								<Value>4</Value>
+							</Value>
+							<Value>
+								<Name>IpMaxPendingOnArp</Name>
+								<Value>40</Value>
+							</Value>
+							<Value>
+								<Name>IpMacCacheSize</Name>
+								<Value>64</Value>
+							</Value>
+							<Value>
+								<Name>IpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>IpRecvFrameQueueSize</Name>
+								<Value>255</Value>
+							</Value>
+							<Value>
+								<Name>UdpMaxReceivers</Name>
+								<Value>4</Value>
+							</Value>
+							<Value>
+								<Name>UdpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>UdpCheckCrc</Name>
+								<EnumText>TRUE</EnumText>
+							</Value>
+							<Value>
+								<Name>TTL</Name>
+								<Value>128</Value>
+							</Value>
+							<Value>
+								<Name>MulticastTTL</Name>
+								<Value>1</Value>
+							</Value>
+							<Value>
+								<Name>PassiveMode</Name>
+								<EnumText>FALSE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcpMTU</Name>
+								<Value>1514</Value>
+							</Value>
+							<Value>
+								<Name>TcpCheckCrc</Name>
+								<EnumText>TRUE</EnumText>
+							</Value>
+							<Value>
+								<Name>TcpMaxSocketCount</Name>
+								<Value>32</Value>
+							</Value>
+							<Value>
+								<Name>TcpReceiveBufferSize</Name>
+								<Value>16192</Value>
+							</Value>
+							<Value>
+								<Name>TcpTransmitBufferSize</Name>
+								<Value>16192</Value>
+							</Value>
+							<Value>
+								<Name>TcpMaxRetry</Name>
+								<Value>5</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutWait</Name>
+								<Value>60000</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutCon</Name>
+								<Value>5000</Value>
+							</Value>
+							<Value>
+								<Name>TcpTimeoutIdle</Name>
+								<Value>1000</Value>
+							</Value>
+							<Value>
+								<Name>TcpRoundTripTime</Name>
+								<Value>3000</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.ip.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpRequest.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.arpReply.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingRequest.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nSendCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nSendFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nRecvCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.pingReply.nRecvFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nLinkStatusChangedCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nAllocFailCnt</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nArpTimeoutFrames</Name>
+								<Value>0</Value>
+							</Value>
+							<Value>
+								<Name>IpStackDiagnosis.nDroppedFrames</Name>
+								<Value>0</Value>
+							</Value>
+						</ParameterValues>
+						<InterfacePointerValues>
+							<Value>
+								<Name>ITcIoEthAdapter</Name>
+								<OTCID>#x00000000</OTCID>
+							</Value>
+						</InterfacePointerValues>
+					</TmcDesc>
+					<Module Id="#x01010020" KeepUnrestoredLinks="2">
+						<Name>S7 Connector A</Name>
+						<ImageId>1001</ImageId>
+						<Xml>
+							<TcSmExtensions>
+								<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}">
+									<value1>75</value1>
+								</TcSmExtension>
+							</TcSmExtensions>
+						</Xml>
+						<TmcDesc GUID="{2DC3BD4C-A5FA-4E4D-B703-BF2AD6F00DB0}">
+							<Name>S7 Connector</Name>
+							<CLSID ClassFactory="TcIoS7Comm" RealTimeInstantiable="true">{2DC3BD4C-A5FA-4E4D-B703-BF2AD6F00DB0}</CLSID>
+							<Info>
+								<TabExtension GUID="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}"/>
+							</Info>
+							<Licenses>
+								<License>
+									<LicenseId>{2A62CBE6-0999-4FCB-AF97-0676B22890FB}</LicenseId>
+								</License>
+							</Licenses>
+							<InitSequence>PSO</InitSequence>
+							<Contexts>
+								<Context>
+									<Id>1</Id>
+									<DependOn>DataArea</DependOn>
+								</Context>
+							</Contexts>
+							<Interfaces>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+								</Interface>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+								</Interface>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{03010099-0000-0000-E000-000000000064}">ITcIoTcpProtocolRecv</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{3D113D10-1FF9-4A6F-BF3B-FF2CB2053387}">ITcIoS7CommConnector</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{60ACD7B4-D0AE-4E84-85AC-8C28765136B1}">ITcIoPlcS7CommConnection</Type>
+								</Interface>
+							</Interfaces>
+							<Parameters>
+								<Parameter HideParameter="true">
+									<Name>TraceLevelMax</Name>
+									<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+									<Default>
+										<EnumText>tlWarning</EnumText>
+									</Default>
+									<PTCID>#x03002103</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>TcpServerIpAddress</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</BaseType>
+									<PTCID>#x00000001</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter DisableCodeGeneration="true">
+									<Name>CpuType</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{B2E5149C-0D94-492F-9FB3-24601C7D2AFA}">E_S7COMM_CPUTYPE</BaseType>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_ST200]]></Text>
+										<Enum>0</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_LOGO0BA8]]></Text>
+										<Enum>1</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S7300]]></Text>
+										<Enum>2</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S7400]]></Text>
+										<Enum>3</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S71200]]></Text>
+										<Enum>4</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S71500]]></Text>
+										<Enum>5</Enum>
+									</EnumInfo>
+									<Default>
+										<EnumText>S7COMM_CPUTYPE_S7300</EnumText>
+									</Default>
+									<PTCID>#x00000003</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>Rack</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<PTCID>#x00000004</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>Slot</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<PTCID>#x00000005</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>PduLen</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<Unit><![CDATA[Bytes]]></Unit>
+									<Default>
+										<Value>960</Value>
+									</Default>
+									<PTCID>#x00000006</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+							</Parameters>
+							<DataAreas>
+								<DataArea>
+									<AreaNo AreaType="InputSrc" CreateSymbols="true" ShowSymbols="true">0</AreaNo>
+									<Name>Status</Name>
+									<ContextId>1</ContextId>
+									<ByteSize>2</ByteSize>
+									<Symbol>
+										<Name>State</Name>
+										<Comment TxtId=""><![CDATA[0x00 = idle
+0x01 = start
+0x10 = TCP setup
+0x11 = TCP setup wait for response
+0x20 = COTP setup 
+0x21 = COTP setup  wait for response
+0x30 = S7 setup 
+0x31 = S7 setup  wait for response
+0x40 = is connected
+0xF1 = TCP error
+0xF2 = TCP setup error
+0xF3 = TCP timeout
+0xF4 = COTP setup error
+0xF5 = S7 setup error
+0xFF = reset]]></Comment>
+										<BitSize>8</BitSize>
+										<BaseType GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">E_S7COMM_CONNECT_STATE</BaseType>
+										<BitOffs>0</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Error</Name>
+										<BitSize>1</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+										<BitOffs>8</BitOffs>
+									</Symbol>
+								</DataArea>
+								<DataArea>
+									<AreaNo AreaType="OutputDst" CreateSymbols="true" ShowSymbols="true">1</AreaNo>
+									<Name>Control</Name>
+									<ContextId>1</ContextId>
+									<ByteSize>1</ByteSize>
+									<Symbol>
+										<Name>Reset</Name>
+										<BitSize>8</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+										<BitOffs>0</BitOffs>
+									</Symbol>
+								</DataArea>
+							</DataAreas>
+							<InterfacePointers>
+								<InterfacePointer>
+									<PTCID>#x03002060</PTCID>
+									<Name>CyclicCaller</Name>
+									<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+									<ContextId>1</ContextId>
+								</InterfacePointer>
+								<InterfacePointer>
+									<PTCID>#x00000002</PTCID>
+									<Name>TcpProt</Name>
+									<Type GUID="{03010098-0000-0000-E000-000000000064}">ITcIoTcpProtocol</Type>
+									<ContextId>1</ContextId>
+								</InterfacePointer>
+							</InterfacePointers>
+							<Properties>
+								<Property>
+									<Name>Category</Name>
+									<Value>NeedEthernetAdapterPort</Value>
+								</Property>
+								<Property>
+									<Name>ChildCategory</Name>
+									<Value>S7Comm</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>NeedIoIdleTask</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>IpProtocol</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComContextPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComInterfacePP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComInterfacePtrPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComParaPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComDataAreaPP</Value>
+								</Property>
+							</Properties>
+							<ParentOTCID>#x01010010</ParentOTCID>
+							<ParameterValues>
+								<Value>
+									<Name>TraceLevelMax</Name>
+									<EnumText>tlWarning</EnumText>
+								</Value>
+								<Value>
+									<Name>TcpServerIpAddress</Name>
+									<Value>3232235521</Value>
+								</Value>
+								<Value>
+									<Name>CpuType</Name>
+									<EnumText>S7COM_CPUTYPE_S71500</EnumText>
+								</Value>
+								<Value>
+									<Name>Rack</Name>
+									<Value>0</Value>
+								</Value>
+								<Value>
+									<Name>Slot</Name>
+									<Value>1</Value>
+								</Value>
+								<Value>
+									<Name>PduLen</Name>
+									<Value>960</Value>
+								</Value>
+							</ParameterValues>
+							<InterfacePointerValues>
+								<Value>
+									<Name>CyclicCaller</Name>
+									<OTCID>#x00000000</OTCID>
+								</Value>
+								<Value>
+									<Name>TcpProt</Name>
+									<OTCID>#x00000000</OTCID>
+								</Value>
+							</InterfacePointerValues>
+						</TmcDesc>
+						<Module Id="#x01010030" KeepUnrestoredLinks="2">
+							<Name>S7 Symbol Server A</Name>
+							<ImageId>1002</ImageId>
+							<Xml>
+								<TcSmExtensions>
+									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C030}">
+										<value1>156</value1>
+									</TcSmExtension>
+								</TcSmExtensions>
+							</Xml>
+							<TmcDesc GUID="{DC54B413-6D2D-46BE-A9B1-B368C81AD2C6}">
+								<Name>S7 Symbol Server</Name>
+								<CLSID ClassFactory="TcIoS7Comm" RealTimeInstantiable="true">{3CD44857-32F4-4D5B-B1A3-F5A74862302D}</CLSID>
+								<Info>
+									<TabExtension GUID="{4AFEC645-EF0F-4F43-810B-20AD2DB6C030}"/>
+								</Info>
+								<Licenses>
+									<License>
+										<LicenseId>{2A62CBE6-0999-4FCB-AF97-0676B22890FB}</LicenseId>
+									</License>
+								</Licenses>
+								<InitSequence>PSO</InitSequence>
+								<Contexts>
+									<Context>
+										<Id>1</Id>
+										<DependOn>ParentObject</DependOn>
+									</Context>
+								</Contexts>
+								<Interfaces>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+									</Interface>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+									</Interface>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+									</Interface>
+									<Interface>
+										<Type GUID="{F208F2FD-FD91-4969-9F31-239B3DD89F90}">ITcIoS7CommRequest</Type>
+									</Interface>
+									<Interface>
+										<Type GUID="{38A9AF4B-7BFE-42CE-8963-313E3CDCE409}">ITcIoPlcS7CommRequest</Type>
+									</Interface>
+								</Interfaces>
+								<Parameters>
+									<Parameter HideParameter="true">
+										<Name>TraceLevelMax</Name>
+										<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+										<Default>
+											<EnumText>tlWarning</EnumText>
+										</Default>
+										<PTCID>#x03002103</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter ReadOnly="true">
+										<Name>DataAreaSizes</Name>
+										<Comment TxtId=""><![CDATA[Array with data area sizes]]></Comment>
+										<BitSize>320</BitSize>
+										<BaseType GUID="{C636B456-B483-42A5-BD8A-58753433F375}" Namespace="IO">TcIoDataAreaSize</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">5</Elements>
+										</ArrayInfo>
+										<PTCID>#x0300002a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>ReadDataParameter</Name>
+										<BitSize>0</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">0</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000006</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>WriteDataParameter</Name>
+										<BitSize>0</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">0</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000007</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>SymbolDataParameter</Name>
+										<BitSize>1008</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">9</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000008</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>Cycletime</Name>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+										<Unit><![CDATA[ms]]></Unit>
+										<Default>
+											<Value>0</Value>
+										</Default>
+										<PTCID>#x00000003</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>SymbolPortNr</Name>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+										<Default>
+											<Value>20100</Value>
+										</Default>
+										<PTCID>#x00000109</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+								</Parameters>
+								<DataAreas>
+									<DataArea>
+										<AreaNo AreaType="Internal">0</AreaNo>
+										<Name>Status</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal">1</AreaNo>
+										<Name>Control</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal">2</AreaNo>
+										<Name>ReadFromS7</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal" CreateSymbols="true" ShowSymbols="true">3</AreaNo>
+										<Name>WriteToS7</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal" CreateSymbols="true" ShowSymbols="true">4</AreaNo>
+										<Name>#Server#</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>105</ByteSize>
+										<Symbol>
+											<Name>BOOL_1</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BOOL_2</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>1</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BOOL_3</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>2</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>INT_1</Name>
+											<BitSize>16</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+											<BitOffs>16</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BYTE_1</Name>
+											<BitSize>8</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+											<BitOffs>32</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>DINT_1</Name>
+											<BitSize>32</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>DWORD_1</Name>
+											<BitSize>32</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType>
+											<BitOffs>96</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>LREAL_1</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>STRING_1</Name>
+											<BitSize>648</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+									</DataArea>
+								</DataAreas>
+								<InterfacePointers>
+									<InterfacePointer>
+										<PTCID>#x00000001</PTCID>
+										<Name>S7CommConnector</Name>
+										<Type GUID="{3D113D10-1FF9-4A6F-BF3B-FF2CB2053387}">ITcIoS7CommConnector</Type>
+										<ContextId>1</ContextId>
+									</InterfacePointer>
+								</InterfacePointers>
+								<Properties>
+									<Property>
+										<Name>Category</Name>
+										<Value>S7Comm</Value>
+									</Property>
+									<Property>
+										<Name>ChildCategory</Name>
+										<Value>S7CommRequest</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>NeedIoIdleTask</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComContextPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComInterfacePP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComInterfacePtrPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComParaPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComDataAreaPP</Value>
+									</Property>
+								</Properties>
+								<ParentOTCID>#x01010020</ParentOTCID>
+								<ParameterValues>
+									<Value>
+										<Name>TraceLevelMax</Name>
+										<EnumText>tlWarning</EnumText>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[0].area</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[0].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[1].area</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[1].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[2].area</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[2].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[3].area</Name>
+										<Value>3</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[3].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[4].area</Name>
+										<Value>4</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[4].size</Name>
+										<Value>105</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].SymbolBitOffs</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7BitOff</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].SymbolBitOffs</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7BitOff</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].SymbolBitOffs</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7ByteOff</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].SymbolBitSize</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].SymbolBitOffs</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7ByteOff</Name>
+										<Value>4</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].SymbolBitSize</Name>
+										<Value>8</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].SymbolBitOffs</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7ByteOff</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].SymbolBitSize</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].SymbolBitOffs</Name>
+										<Value>64</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7ByteOff</Name>
+										<Value>20</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].SymbolBitSize</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].SymbolBitOffs</Name>
+										<Value>96</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7ByteOff</Name>
+										<Value>24</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].SymbolBitSize</Name>
+										<Value>64</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].SymbolBitOffs</Name>
+										<Value>128</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7ByteOff</Name>
+										<Value>44</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7DataBlock</Name>
+										<Value>2000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].SymbolBitSize</Name>
+										<Value>648</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].SymbolBitOffs</Name>
+										<Value>192</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].Flags</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>Cycletime</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolPortNr</Name>
+										<Value>20100</Value>
+									</Value>
+								</ParameterValues>
+								<InterfacePointerValues>
+									<Value>
+										<Name>S7CommConnector</Name>
+										<OTCID>#x00000000</OTCID>
+									</Value>
+								</InterfacePointerValues>
+							</TmcDesc>
+						</Module>
+					</Module>
+					<Module Id="#x01010040" KeepUnrestoredLinks="2">
+						<Name>S7 Connector B</Name>
+						<ImageId>1001</ImageId>
+						<Xml>
+							<TcSmExtensions>
+								<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}">
+									<value1>75</value1>
+								</TcSmExtension>
+							</TcSmExtensions>
+						</Xml>
+						<TmcDesc GUID="{2DC3BD4C-A5FA-4E4D-B703-BF2AD6F00DB0}">
+							<Name>S7 Connector</Name>
+							<CLSID ClassFactory="TcIoS7Comm" RealTimeInstantiable="true">{2DC3BD4C-A5FA-4E4D-B703-BF2AD6F00DB0}</CLSID>
+							<Info>
+								<TabExtension GUID="{4AFEC645-EF0F-4F43-810B-20AD2DB6C000}"/>
+							</Info>
+							<Licenses>
+								<License>
+									<LicenseId>{2A62CBE6-0999-4FCB-AF97-0676B22890FB}</LicenseId>
+								</License>
+							</Licenses>
+							<InitSequence>PSO</InitSequence>
+							<Contexts>
+								<Context>
+									<Id>1</Id>
+									<DependOn>DataArea</DependOn>
+								</Context>
+							</Contexts>
+							<Interfaces>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{03000010-0000-0000-E000-000000000064}">ITcCyclic</Type>
+								</Interface>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+								</Interface>
+								<Interface DisableCodeGeneration="true">
+									<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{03010099-0000-0000-E000-000000000064}">ITcIoTcpProtocolRecv</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{3D113D10-1FF9-4A6F-BF3B-FF2CB2053387}">ITcIoS7CommConnector</Type>
+								</Interface>
+								<Interface>
+									<Type GUID="{60ACD7B4-D0AE-4E84-85AC-8C28765136B1}">ITcIoPlcS7CommConnection</Type>
+								</Interface>
+							</Interfaces>
+							<Parameters>
+								<Parameter HideParameter="true">
+									<Name>TraceLevelMax</Name>
+									<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+									<Default>
+										<EnumText>tlWarning</EnumText>
+									</Default>
+									<PTCID>#x03002103</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>TcpServerIpAddress</Name>
+									<BitSize>32</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-00000000003E}">IPADDR</BaseType>
+									<PTCID>#x00000001</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter DisableCodeGeneration="true">
+									<Name>CpuType</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{B2E5149C-0D94-492F-9FB3-24601C7D2AFA}">E_S7COMM_CPUTYPE</BaseType>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_ST200]]></Text>
+										<Enum>0</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_LOGO0BA8]]></Text>
+										<Enum>1</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S7300]]></Text>
+										<Enum>2</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S7400]]></Text>
+										<Enum>3</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S71200]]></Text>
+										<Enum>4</Enum>
+									</EnumInfo>
+									<EnumInfo>
+										<Text><![CDATA[S7COM_CPUTYPE_S71500]]></Text>
+										<Enum>5</Enum>
+									</EnumInfo>
+									<Default>
+										<EnumText>S7COMM_CPUTYPE_S7300</EnumText>
+									</Default>
+									<PTCID>#x00000003</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>Rack</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<PTCID>#x00000004</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>Slot</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<PTCID>#x00000005</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+								<Parameter>
+									<Name>PduLen</Name>
+									<BitSize>16</BitSize>
+									<BaseType GUID="{18071995-0000-0000-0000-000000000005}">UINT</BaseType>
+									<Unit><![CDATA[Bytes]]></Unit>
+									<Default>
+										<Value>960</Value>
+									</Default>
+									<PTCID>#x00000006</PTCID>
+									<ContextId>1</ContextId>
+								</Parameter>
+							</Parameters>
+							<DataAreas>
+								<DataArea>
+									<AreaNo AreaType="InputSrc" CreateSymbols="true" ShowSymbols="true">0</AreaNo>
+									<Name>Status</Name>
+									<ContextId>1</ContextId>
+									<ByteSize>2</ByteSize>
+									<Symbol>
+										<Name>State</Name>
+										<Comment TxtId=""><![CDATA[0x00 = idle
+0x01 = start
+0x10 = TCP setup
+0x11 = TCP setup wait for response
+0x20 = COTP setup 
+0x21 = COTP setup  wait for response
+0x30 = S7 setup 
+0x31 = S7 setup  wait for response
+0x40 = is connected
+0xF1 = TCP error
+0xF2 = TCP setup error
+0xF3 = TCP timeout
+0xF4 = COTP setup error
+0xF5 = S7 setup error
+0xFF = reset]]></Comment>
+										<BitSize>8</BitSize>
+										<BaseType GUID="{11169AC4-BFEF-4175-B70D-5D2746B9F2F7}">E_S7COMM_CONNECT_STATE</BaseType>
+										<BitOffs>0</BitOffs>
+									</Symbol>
+									<Symbol>
+										<Name>Error</Name>
+										<BitSize>1</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+										<BitOffs>8</BitOffs>
+									</Symbol>
+								</DataArea>
+								<DataArea>
+									<AreaNo AreaType="OutputDst" CreateSymbols="true" ShowSymbols="true">1</AreaNo>
+									<Name>Control</Name>
+									<ContextId>1</ContextId>
+									<ByteSize>1</ByteSize>
+									<Symbol>
+										<Name>Reset</Name>
+										<BitSize>8</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000030}">BOOL</BaseType>
+										<BitOffs>0</BitOffs>
+									</Symbol>
+								</DataArea>
+							</DataAreas>
+							<InterfacePointers>
+								<InterfacePointer>
+									<PTCID>#x03002060</PTCID>
+									<Name>CyclicCaller</Name>
+									<Type GUID="{0300001E-0000-0000-E000-000000000064}">ITcCyclicCaller</Type>
+									<ContextId>1</ContextId>
+								</InterfacePointer>
+								<InterfacePointer>
+									<PTCID>#x00000002</PTCID>
+									<Name>TcpProt</Name>
+									<Type GUID="{03010098-0000-0000-E000-000000000064}">ITcIoTcpProtocol</Type>
+									<ContextId>1</ContextId>
+								</InterfacePointer>
+							</InterfacePointers>
+							<Properties>
+								<Property>
+									<Name>Category</Name>
+									<Value>NeedEthernetAdapterPort</Value>
+								</Property>
+								<Property>
+									<Name>ChildCategory</Name>
+									<Value>S7Comm</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>NeedIoIdleTask</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>IpProtocol</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComContextPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComInterfacePP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComInterfacePtrPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComParaPP</Value>
+								</Property>
+								<Property>
+									<Name>Category</Name>
+									<Value>HideTcComDataAreaPP</Value>
+								</Property>
+							</Properties>
+							<ParentOTCID>#x01010010</ParentOTCID>
+							<ParameterValues>
+								<Value>
+									<Name>TraceLevelMax</Name>
+									<EnumText>tlWarning</EnumText>
+								</Value>
+								<Value>
+									<Name>TcpServerIpAddress</Name>
+									<Value>3232235521</Value>
+								</Value>
+								<Value>
+									<Name>CpuType</Name>
+									<EnumText>S7COM_CPUTYPE_S71500</EnumText>
+								</Value>
+								<Value>
+									<Name>Rack</Name>
+									<Value>0</Value>
+								</Value>
+								<Value>
+									<Name>Slot</Name>
+									<Value>1</Value>
+								</Value>
+								<Value>
+									<Name>PduLen</Name>
+									<Value>960</Value>
+								</Value>
+							</ParameterValues>
+							<InterfacePointerValues>
+								<Value>
+									<Name>CyclicCaller</Name>
+									<OTCID>#x00000000</OTCID>
+								</Value>
+								<Value>
+									<Name>TcpProt</Name>
+									<OTCID>#x00000000</OTCID>
+								</Value>
+							</InterfacePointerValues>
+						</TmcDesc>
+						<Module Id="#x01010050" KeepUnrestoredLinks="2">
+							<Name>S7 Symbol Server B</Name>
+							<ImageId>1002</ImageId>
+							<Xml>
+								<TcSmExtensions>
+									<TcSmExtension Guid="{4AFEC645-EF0F-4F43-810B-20AD2DB6C030}">
+										<value1>196</value1>
+									</TcSmExtension>
+								</TcSmExtensions>
+							</Xml>
+							<TmcDesc GUID="{DC54B413-6D2D-46BE-A9B1-B368C81AD2C6}">
+								<Name>S7 Symbol Server</Name>
+								<CLSID ClassFactory="TcIoS7Comm" RealTimeInstantiable="true">{3CD44857-32F4-4D5B-B1A3-F5A74862302D}</CLSID>
+								<Info>
+									<TabExtension GUID="{4AFEC645-EF0F-4F43-810B-20AD2DB6C030}"/>
+								</Info>
+								<Licenses>
+									<License>
+										<LicenseId>{2A62CBE6-0999-4FCB-AF97-0676B22890FB}</LicenseId>
+									</License>
+								</Licenses>
+								<InitSequence>PSO</InitSequence>
+								<Contexts>
+									<Context>
+										<Id>1</Id>
+										<DependOn>ParentObject</DependOn>
+									</Context>
+								</Contexts>
+								<Interfaces>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{00000012-0000-0000-E000-000000000064}">ITComObject</Type>
+									</Interface>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{03000012-0000-0000-E000-000000000064}">ITcADI</Type>
+									</Interface>
+									<Interface DisableCodeGeneration="true">
+										<Type GUID="{03000018-0000-0000-E000-000000000064}">ITcWatchSource</Type>
+									</Interface>
+									<Interface>
+										<Type GUID="{F208F2FD-FD91-4969-9F31-239B3DD89F90}">ITcIoS7CommRequest</Type>
+									</Interface>
+									<Interface>
+										<Type GUID="{38A9AF4B-7BFE-42CE-8963-313E3CDCE409}">ITcIoPlcS7CommRequest</Type>
+									</Interface>
+								</Interfaces>
+								<Parameters>
+									<Parameter HideParameter="true">
+										<Name>TraceLevelMax</Name>
+										<Comment><![CDATA[Controls the amount of log messages.]]></Comment>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{8007AE3B-86BB-40F2-B385-EF87FCC239A4}">TcTraceLevel</BaseType>
+										<Default>
+											<EnumText>tlWarning</EnumText>
+										</Default>
+										<PTCID>#x03002103</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter ReadOnly="true">
+										<Name>DataAreaSizes</Name>
+										<Comment TxtId=""><![CDATA[Array with data area sizes]]></Comment>
+										<BitSize>320</BitSize>
+										<BaseType GUID="{C636B456-B483-42A5-BD8A-58753433F375}" Namespace="IO">TcIoDataAreaSize</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">5</Elements>
+										</ArrayInfo>
+										<PTCID>#x0300002a</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>ReadDataParameter</Name>
+										<BitSize>0</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">0</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000006</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>WriteDataParameter</Name>
+										<BitSize>0</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">0</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000007</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>SymbolDataParameter</Name>
+										<BitSize>1008</BitSize>
+										<BaseType GUID="{255BA050-BA1A-4FC6-A635-10249FF105BB}">S7CommVariable</BaseType>
+										<ArrayInfo>
+											<LBound>0</LBound>
+											<Elements Min="0" Max="64">9</Elements>
+										</ArrayInfo>
+										<PTCID>#x00000008</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>Cycletime</Name>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+										<Unit><![CDATA[ms]]></Unit>
+										<Default>
+											<Value>0</Value>
+										</Default>
+										<PTCID>#x00000003</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+									<Parameter>
+										<Name>SymbolPortNr</Name>
+										<BitSize>32</BitSize>
+										<BaseType GUID="{18071995-0000-0000-0000-000000000008}">UDINT</BaseType>
+										<Default>
+											<Value>20100</Value>
+										</Default>
+										<PTCID>#x00000109</PTCID>
+										<ContextId>1</ContextId>
+									</Parameter>
+								</Parameters>
+								<DataAreas>
+									<DataArea>
+										<AreaNo AreaType="Internal">0</AreaNo>
+										<Name>Status</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal">1</AreaNo>
+										<Name>Control</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal">2</AreaNo>
+										<Name>ReadFromS7</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal" CreateSymbols="true" ShowSymbols="true">3</AreaNo>
+										<Name>WriteToS7</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>0</ByteSize>
+									</DataArea>
+									<DataArea>
+										<AreaNo AreaType="Internal" CreateSymbols="true" ShowSymbols="true">4</AreaNo>
+										<Name>#Server#</Name>
+										<ContextId>1</ContextId>
+										<ByteSize>105</ByteSize>
+										<Symbol>
+											<Name>BOOL_1</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>0</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BOOL_2</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>1</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BOOL_3</Name>
+											<BitSize>1</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000010}">BIT</BaseType>
+											<BitOffs>2</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>INT_1</Name>
+											<BitSize>16</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000006}">INT</BaseType>
+											<BitOffs>16</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>BYTE_1</Name>
+											<BitSize>8</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+											<BitOffs>32</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>DINT_1</Name>
+											<BitSize>32</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000009}">DINT</BaseType>
+											<BitOffs>64</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>DWORD_1</Name>
+											<BitSize>32</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000000000007}">DWORD</BaseType>
+											<BitOffs>96</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>LREAL_1</Name>
+											<BitSize>64</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-00000000000E}">LREAL</BaseType>
+											<BitOffs>128</BitOffs>
+										</Symbol>
+										<Symbol>
+											<Name>STRING_1</Name>
+											<BitSize>648</BitSize>
+											<BaseType GUID="{18071995-0000-0000-0000-000100000050}">STRING(80)</BaseType>
+											<BitOffs>192</BitOffs>
+										</Symbol>
+									</DataArea>
+								</DataAreas>
+								<InterfacePointers>
+									<InterfacePointer>
+										<PTCID>#x00000001</PTCID>
+										<Name>S7CommConnector</Name>
+										<Type GUID="{3D113D10-1FF9-4A6F-BF3B-FF2CB2053387}">ITcIoS7CommConnector</Type>
+										<ContextId>1</ContextId>
+									</InterfacePointer>
+								</InterfacePointers>
+								<Properties>
+									<Property>
+										<Name>Category</Name>
+										<Value>S7Comm</Value>
+									</Property>
+									<Property>
+										<Name>ChildCategory</Name>
+										<Value>S7CommRequest</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>NeedIoIdleTask</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComContextPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComInterfacePP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComInterfacePtrPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComParaPP</Value>
+									</Property>
+									<Property>
+										<Name>Category</Name>
+										<Value>HideTcComDataAreaPP</Value>
+									</Property>
+								</Properties>
+								<ParentOTCID>#x01010040</ParentOTCID>
+								<ParameterValues>
+									<Value>
+										<Name>TraceLevelMax</Name>
+										<EnumText>tlWarning</EnumText>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[0].area</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[0].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[1].area</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[1].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[2].area</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[2].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[3].area</Name>
+										<Value>3</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[3].size</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[4].area</Name>
+										<Value>4</Value>
+									</Value>
+									<Value>
+										<Name>DataAreaSizes[4].size</Name>
+										<Value>105</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].SymbolBitOffs</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[0].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7BitOff</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].SymbolBitOffs</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[1].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7ByteOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7BitOff</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].SymbolBitSize</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].SymbolBitOffs</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[2].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7ByteOff</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].SymbolBitSize</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].SymbolBitOffs</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[3].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7ByteOff</Name>
+										<Value>4</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].SymbolBitSize</Name>
+										<Value>8</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].SymbolBitOffs</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[4].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7ByteOff</Name>
+										<Value>16</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].SymbolBitSize</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].SymbolBitOffs</Name>
+										<Value>64</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[5].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7ByteOff</Name>
+										<Value>20</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].SymbolBitSize</Name>
+										<Value>32</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].SymbolBitOffs</Name>
+										<Value>96</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[6].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7ByteOff</Name>
+										<Value>24</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].SymbolBitSize</Name>
+										<Value>64</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].SymbolBitOffs</Name>
+										<Value>128</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[7].Flags</Name>
+										<Value>1</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7DataArea</Name>
+										<EnumText>S7COMM_DATAAREA_DATA_BLOCKS</EnumText>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7ByteOff</Name>
+										<Value>44</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7BitOff</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].S7DataBlock</Name>
+										<Value>1000</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].SymbolBitSize</Name>
+										<Value>648</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].SymbolBitOffs</Name>
+										<Value>192</Value>
+									</Value>
+									<Value>
+										<Name>SymbolDataParameter[8].Flags</Name>
+										<Value>2</Value>
+									</Value>
+									<Value>
+										<Name>Cycletime</Name>
+										<Value>0</Value>
+									</Value>
+									<Value>
+										<Name>SymbolPortNr</Name>
+										<Value>20100</Value>
+									</Value>
+								</ParameterValues>
+								<InterfacePointerValues>
+									<Value>
+										<Name>S7CommConnector</Name>
+										<OTCID>#x00000000</OTCID>
+									</Value>
+								</InterfacePointerValues>
+							</TmcDesc>
+						</Module>
+					</Module>
+				</Module>
+				<Ethernet DeviceDesc="Ethernet 2 (X000)" Ports="1" VLanIds="0a0014001e00280032003c00460050005a0064006e00780082008c009600a000aa00b400be00c800d200dc00e600f000fa0004010e01180122012c01360140014a0154015e01680172017c01860190019a01a401ae01b801c201cc01d601e001ea01f401fe01080212021c02260230023a0244024e02580262026c0276028002">
+					<Esl SyncSlaveProtocolPort="-1"/>
+				</Ethernet>
+			</Device>
+		</Io>
+	</Project>
+</TcSmProject>
