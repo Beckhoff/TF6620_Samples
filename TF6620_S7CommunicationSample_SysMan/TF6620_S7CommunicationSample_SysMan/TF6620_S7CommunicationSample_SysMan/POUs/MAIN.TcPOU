@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
+  <POU Name="MAIN" Id="{42652ac3-b891-4bdf-8de5-89c8837b2bcb}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM MAIN
+VAR
+	bStartReadRequest 	: BOOL;	
+	bStartWriteRequest	: BOOL;
+	
+	stS7Info			: ST_S7_Info;
+	stS7RequestHandling	: ST_S7_RequestHandling;
+
+	(* Read variables *)
+	bReadRequestDone	: BOOL;
+	stS7Incoming		: ST_S7_Incoming;
+	stS7IncomingCyclic	: ST_S7_Incoming_Cyclic;
+	
+	(* Write variables *)
+	bWriteEnable AT%Q*	: BOOL;
+	bWriteRequestDone	: BOOL;
+	i1write AT%Q*		: INT := 42;
+	
+	(* State machine variables *)
+	nStateRead			: UINT;
+	nStateWrite			: UINT;
+	
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[CASE nStateRead OF 
+	
+	// WAIT FOR START READ
+	0: 
+		IF bStartReadRequest THEN
+			bStartReadRequest := FALSE;
+			bReadRequestDone := FALSE;
+			nStateRead := nStateRead + 1;
+		END_IF
+
+	// TRIGGER READ
+	1:
+		stS7RequestHandling.bySendRequest := stS7RequestHandling.byReceiveCounter + 1;
+		nStateRead := nStateRead + 1;
+		
+	// WAIT FOR READ DONE
+	2: 
+		IF stS7RequestHandling.byReceiveCounter = stS7RequestHandling.bySendRequest THEN
+			nStateRead := nStateRead + 1;
+		END_IF	
+		
+	// DONE
+	3: 
+		bReadRequestDone := TRUE;
+		nStateRead := 0;
+	
+END_CASE
+
+
+CASE nStateWrite OF
+	
+	// WAIT FOR START WRITE
+	0:
+		IF bStartWriteRequest THEN
+			bStartWriteRequest := FALSE;
+			bWriteRequestDone := FALSE;
+			bWriteEnable := TRUE;
+			nStateWrite := nStateWrite + 1;
+		END_IF
+
+	// TRIGGER WRITE
+	1:
+		stS7RequestHandling.bySendRequest := stS7RequestHandling.byReceiveCounter + 1;
+		nStateWrite := nStateWrite + 1;
+		
+	// WAIT FOR WRITE DONE
+	2: 
+		IF stS7RequestHandling.byReceiveCounter = stS7RequestHandling.bySendRequest THEN
+			bWriteEnable := FALSE;
+			nStateWrite := nStateWrite + 1;
+		END_IF	
+		
+	// DONE
+	3: 
+		bWriteRequestDone := TRUE;
+		nStateWrite := 0;
+		
+END_CASE
+
+]]></ST>
+    </Implementation>
+    <LineIds Name="MAIN">
+      <LineId Id="6" Count="58" />
+      <LineId Id="2" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

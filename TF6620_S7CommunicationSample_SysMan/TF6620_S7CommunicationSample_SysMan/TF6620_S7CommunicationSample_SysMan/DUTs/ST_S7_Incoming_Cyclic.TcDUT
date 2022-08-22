@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.4">
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.11">
   <DUT Name="ST_S7_Incoming_Cyclic" Id="{1e14f928-5fde-4d18-aec1-2af0d8ea36ef}">
     <Declaration><![CDATA[TYPE ST_S7_Incoming_Cyclic :
 STRUCT
